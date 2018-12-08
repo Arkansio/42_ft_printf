@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/08 22:57:22 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/08 23:09:44 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,6 @@ fclean: clean
 re: fclean all
 
 main: all
-	gcc -o test.out maintest.c -L. ./
+	gcc -o test.out maintest.c -L. ./libftprintf.a
 
 .PHONY: all clean re fclean main
