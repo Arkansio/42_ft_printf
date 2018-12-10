@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/10 20:57:49 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/10 21:54:21 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_flags				g_flags[] =
 	{e_flags::ll, "ll"},
 	{e_flags::l, "l"},
 	{e_flags::L, "L"},
-	{e_flags::end, 0} // end signification
+	{e_flags::end, NULL} // end signification
 };
 
 t_type				g_types[] =
