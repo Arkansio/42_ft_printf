@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/08 23:09:44 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/10 19:40:04 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ OBJS = $(SRCS:.c=.o)
 HEADER = includes
 
 all: $(NAME)
+	gcc -o test.out maintest.c -L. ./libftprintf.a
 
 $(NAME): $(OBJS)
 	make -C libft
@@ -41,7 +42,4 @@ fclean: clean
 
 re: fclean all
 
-main: all
-	gcc -o test.out maintest.c -L. ./libftprintf.a
-
-.PHONY: all clean re fclean main
+.PHONY: all clean re fclean
