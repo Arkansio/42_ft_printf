@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 19:43:32 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/08 22:56:03 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/11 00:56:54 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "data.h"
 
 int		ft_printf(const char *format, ...)
 {
     (void)format;
-	return 0;
+    ft_atoi("1");
+	return 1;
 }

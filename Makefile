@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/10 19:40:04 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/11 01:15:29 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,31 +14,36 @@ NAME = libftprintf.a
 
 SRCS = ft_printf.c
 
+SRCSL = ft_atoi.c
+
 FLAGS = -Wall \
 		-Werror \
-		-Wextra
+		-Wextra \
 
 OBJS = $(SRCS:.c=.o)
+
+OBJSL = $(SRCSL:.c=.o)
 
 HEADER = includes
 
 all: $(NAME)
-	gcc -o test.out maintest.c -L. ./libftprintf.a
 
-$(NAME): $(OBJS)
-	make -C libft
+$(NAME): $(OBJSL) $(OBJS)
 	ar rc $(NAME) $^
+	gcc -o test.out maintest.c -L. ./libftprintf.a
 
 ./%.o: ./src/%.c
 	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
 
+./%.o: ./libft/src/%.c
+	gcc $(FLAGS) -c $^ -I ./libft/includes
+
 clean:
 	/bin/rm -f $(OBJS)
-	make -C libft clean
+	/bin/rm -f $(OBJSL)
 
 fclean: clean
 	/bin/rm -f $(NAME)
-	make -C libft fclean
 
 re: fclean all
 
