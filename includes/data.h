@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/11 00:43:54 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/11 01:20:07 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DATA_H
 
 #include "libft.h"
+#include <stdarg.h>
 
 enum e_flags {
 	diez = 0,
