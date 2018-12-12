@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 03:45:23 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 03:45:55 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 20:04:38 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ t_flags				g_flags[] =
 
 t_type				g_types[] =
 {
-	{"c", &ft_atoi},
-	{"s", &ft_atoi},
-	{"p", &ft_atoi},
-    {"d", &ft_atoi},
-    {"i", &ft_atoi},
-    {"o", &ft_atoi},
-    {"u", &ft_atoi},
-    {"x", &ft_atoi},
-	{"X", &ft_atoi},
-	{"f", &ft_atoi},
-	{"%", &ft_atoi},
-	{NULL, NULL}
+	{'c', &ft_atoi},
+	{'s', &ft_atoi},
+	{'p', &ft_atoi},
+    {'d', &ft_atoi},
+    {'i', &ft_atoi},
+    {'o', &ft_atoi},
+    {'u', &ft_atoi},
+    {'x', &ft_atoi},
+	{'X', &ft_atoi},
+	{'f', &ft_atoi},
+	{'%', &ft_atoi},
+	{'0', NULL}
 };
 
 #endif
