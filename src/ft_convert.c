@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 19:19:16 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/12 18:45:43 by mgessa            #+#    #+#             */
+/*   Updated: 2018/12/12 19:17:08 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-t_list		*ft_parse(const char *format)
+int			ft_convert(const char *format, t_list **lst)
 {
-    int		i;
-	t_list	*alst;
+	int		i;
 
-	i = -1;
-	alst = NULL;
-	while (format[++i] != '\0')
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
-			i += ft_convert(&format[i], &alst);
+
 	}
-    return (alst);
 }

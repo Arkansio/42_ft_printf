@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/11 01:38:54 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 19:21:39 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		main()
 	printf("%+-+++10d\n", 212);
 	printf("%+-+++10hd\n", 270);
 	printf("%+++++---10.5hd Hello\n", 212);
-	printf("HEllo %-+hh+1.800d Hello %d\n", 10);
+	printf("HEllo %-+hh+1.500 4000...80d Hello %d\n", 10);
 	
-	ft_printf("Hello my name is %s\n", "François");
+//	ft_printf("Hello my name is %s\n", "François");
 }
