@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 20:02:53 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 20:23:39 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "libft.h"
 #include <stdarg.h>
 #include <stdlib.h>
+
+#include "stdio.h"
 
 enum e_flags {
 	diez = 0,

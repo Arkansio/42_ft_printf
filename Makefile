@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/12 20:09:32 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/12 20:38:16 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = ft_printf.c \
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
 		ft_strlen.c \
-		ft_strncmp.c
+		ft_strncmp.c \
 
 FLAGS = -Wall \
 		-Werror \
