@@ -6,12 +6,13 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 19:43:32 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 01:56:06 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 03:46:43 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
+#include "struct.h"
 #include "stdio.h"
+#include "globales.h"
 
 int		ft_printf(const char *format, ...)
 {

@@ -6,11 +6,11 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 01:54:39 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 02:52:56 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 03:47:00 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
+#include "struct.h"
 
 void	ft_parse_rd(const char *str)
 {
