@@ -6,14 +6,12 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/11 00:44:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 03:07:21 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
-
-#include "libft.h"
 
 int		ft_printf(const char *format, ...);
 
