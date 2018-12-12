@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 03:45:23 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 20:04:38 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 20:13:51 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "struct.h"
 
-t_flags				g_flags[] =
+static t_flags				g_flags[] =
 {
 	{diez, "#"},
 	{zero, "0"},
@@ -30,7 +30,7 @@ t_flags				g_flags[] =
 	{end, NULL} // end signification
 };
 
-t_type				g_types[] =
+static t_type				g_types[] =
 {
 	{'c', &ft_atoi},
 	{'s', &ft_atoi},
