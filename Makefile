@@ -6,13 +6,15 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/11 01:15:29 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/12 02:58:58 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c
+SRCS = ft_printf.c \
+		ft_parse_rd.c \
+		ft_parse.c
 
 SRCSL = ft_atoi.c
 
@@ -30,7 +32,7 @@ all: $(NAME)
 
 $(NAME): $(OBJSL) $(OBJS)
 	ar rc $(NAME) $^
-	gcc -o test.out maintest.c -L. ./libftprintf.a
+	gcc -o test.out maintest.c -L. ./libftprintf.a -I ./includes/
 
 ./%.o: ./src/%.c
 	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes

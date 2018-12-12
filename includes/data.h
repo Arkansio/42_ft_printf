@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/11 01:20:07 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 02:55:44 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "libft.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
 enum e_flags {
 	diez = 0,
@@ -32,8 +33,8 @@ enum e_flags {
 
 typedef struct		s_args // args list
 {
-	int		flags;
-	void	*next;
+	int				flags;
+	struct t_args	*next;
 }					t_args;
 
 typedef	struct		s_proper // pass to g_types functions
@@ -86,5 +87,8 @@ t_type				g_types[] =
 	{"%", ft_atoi},
 	{NULL, NULL}
 };
+
+t_list		*ft_parse(const char *format);
+void		ft_parse_rd(const char *str);
 
 #endif

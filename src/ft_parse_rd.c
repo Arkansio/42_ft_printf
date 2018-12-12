@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_parse_rd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/07 19:43:32 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 01:56:06 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/12 01:54:39 by mgessa            #+#    #+#             */
+/*   Updated: 2018/12/12 02:52:56 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
-#include "stdio.h"
 
-int		ft_printf(const char *format, ...)
+void	ft_parse_rd(const char *str)
 {
-    (void)format;
-    va_list ap;
-//    char    *s;
+	t_list	*new;
 
-    va_start(ap, format);
-    ft_parse_rd(format);
-//    s = va_arg(ap, char *);
-//    printf("%s\n", s);
-    va_end(ap);
-
-	return 1;
+	new = NULL;
+	if (!(new = ft_parse(str)))
+		exit(1);
+//	ft_putstr(new);
 }
