@@ -6,12 +6,12 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 03:47:31 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/12 04:10:17 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#ifndef STRUCT_H
+# define STRUCT_H
 
 #include "libft.h"
 #include <stdarg.h>
