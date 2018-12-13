@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 01:54:39 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 19:20:33 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 00:42:51 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void	ft_parse_rd(const char *str)
 	new = NULL;
 	if (!(new = ft_parse(str)))
 		exit(1);
+	ft_strlst_read(&new);
 //	ft_putstr(new);
 }
