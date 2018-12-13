@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:45:43 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/13 20:26:13 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/13 20:36:05 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int			ft_validconv(const char *format)
 {
 	int		sz_f;
 
-	(void)lst;
 	printf("format is: '%s'", format);
 	if (!(sz_f = is_valid(format)))
 		return (0);

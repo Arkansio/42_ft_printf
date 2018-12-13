@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/12 20:38:16 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/13 20:37:09 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libftprintf.a
 SRCS = ft_printf.c \
 		ft_parse_rd.c \
 		ft_parse.c \
-		ft_convert.c
+		ft_validconv.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
