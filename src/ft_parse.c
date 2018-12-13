@@ -6,26 +6,45 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/13 20:24:47 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 00:41:10 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-t_list		*ft_parse(const char *format)
+static void		add_part(const char *format, t_list **alst, int i, int sz_cast)
+{
+	char	*new;
+	t_list	*lst;
+
+	new = ft_strsub(format, 0, (size_t)i);
+	if (!new)
+		exit(EXIT_FAILURE);
+	if (!(lst = ft_lstnew((void*)new, (size_t)(i + sz_cast))))
+		exit(EXIT_FAILURE);
+	ft_lstaddend(alst, lst);
+}
+
+t_list			*ft_parse(const char *format)
 {
     int		i;
+	int		sz_cast;
+	
 	t_list	*alst;
 
 	i = -1;
 	alst = NULL;
 	while (format[++i] != '\0')
 	{
-		if (format[i] == '%')
+		if((sz_cast = ft_validconv(&format[i])))
 		{
-			i += ft_validconv(&format[i]);
-			format += i;
+			add_part(format, &alst, i, sz_cast);
+			format += i + sz_cast;
+			i = 0;
 		}
+		else if (format[i + 1] == '\0')
+			add_part(format, &alst, i, ft_strlen(format));
 	}
+	ft_strlst_read(&alst);
     return (alst);
 }

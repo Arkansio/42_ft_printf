@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/13 20:37:09 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/13 23:05:59 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,23 @@ NAME = libftprintf.a
 SRCS = ft_printf.c \
 		ft_parse_rd.c \
 		ft_parse.c \
-		ft_validconv.c
+		ft_validconv.c \
+		ft_strlst_read.c \
+		ft_lstaddend.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
 		ft_strlen.c \
 		ft_strncmp.c \
+		ft_lstadd.c \
+		ft_lstnew.c \
+		ft_strsub.c \
+		ft_memalloc.c \
+		ft_memmove.c \
+		ft_strnew.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memset.c
 
 FLAGS = -Wall \
 		-Werror \

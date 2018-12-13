@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/13 20:24:55 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/13 23:06:14 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "libft.h"
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "stdio.h"
 
@@ -59,6 +60,8 @@ typedef struct	s_flags // flags list in order of priority
 	char			*c_val;
 }				t_flags;	
 
+void		ft_lstaddend(t_list **alst, t_list *new);
+void		ft_strlst_read(t_list **alst);
 int			ft_validconv(const char *format);
 t_list		*ft_parse(const char *format);
 void		ft_parse_rd(const char *str);

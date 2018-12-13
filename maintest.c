@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 20:46:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/13 23:53:06 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ int		main()
 	printf("%+++++---10.5hd Hello\n", 212);
 	printf("\n\nsay: %.2s\n\n", "hello");
 	
-	ft_printf("Hello my name is %.         .s\n", "François");
+//	ft_printf("Hello my name is %.         .s\n", "François");
+//	printf("Hello my name is %s\n  %   s", "François", "Gerard");
+	ft_printf("Hello my %hhssalut%stest je t'aime\n", "François");
+	//ft_printf("");
 }
