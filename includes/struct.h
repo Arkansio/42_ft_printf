@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 20:23:39 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/13 20:24:55 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct	s_flags // flags list in order of priority
 	char			*c_val;
 }				t_flags;	
 
-int			ft_convert(const char *format, t_list **lst);
+int			ft_validconv(const char *format);
 t_list		*ft_parse(const char *format);
 void		ft_parse_rd(const char *str);
 

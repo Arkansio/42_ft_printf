@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert.c                                       :+:      :+:    :+:   */
+/*   ft_validconv.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:45:43 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 22:57:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/13 20:26:13 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int	is_valid(const char *str)
 	return (0);
 }
 
-int			ft_convert(const char *format, t_list **lst)
+int			ft_validconv(const char *format)
 {
 	int		sz_f;
 
