@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/14 02:15:04 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/14 18:42:43 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS = ft_printf.c \
 		ft_strlst_read.c \
 		ft_lstaddend.c \
 		get_flag.c \
-		get_convert.c
+		get_typefunc.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
