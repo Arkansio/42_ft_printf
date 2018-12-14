@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 01:36:36 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 18:57:44 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_list			*ft_parse(const char *format)
 		if((sz_cast = ft_validconv(&format[i])))
 		{
 			add_part(format, &alst, i, sz_cast);
+			ft_convert(&alst, format, sz_cast);
 			format += i + sz_cast;
 			i = 0;
 		}
