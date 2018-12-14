@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 00:42:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 01:36:36 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_list			*ft_parse(const char *format)
 			i = 0;
 		}
 		else if (format[i + 1] == '\0')
-			add_part(format, &alst, i, ft_strlen(format));
+			add_part(format, &alst, ft_strlen(format), ft_strlen(format));
 	}
     return (alst);
 }

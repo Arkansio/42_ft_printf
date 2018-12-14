@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 20:48:21 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/13 23:31:55 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 01:29:45 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void        ft_strlst_read(t_list **alst)
 {
     t_list *tmp;
 
-    printf("hey");
+//    printf("hey");
     if (!alst)
         return ;
-    printf("hey\n");
+//    printf("hey\n");
     tmp = alst[0];
     while (tmp)
     {
