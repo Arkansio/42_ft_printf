@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:45:43 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 02:12:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 21:33:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ static int	is_valid(const char *str)
 		if((fl_st = is_flag(&str[i])) > 1)
 			i += fl_st - 1;
 		else if (!is_vc(str[i]) && !fl_st)
-			return (0);
+			return (i);
 	}
-	return (0);
+	return (i);
 }
 
 int			ft_validconv(const char *format)
@@ -73,7 +73,7 @@ int			ft_validconv(const char *format)
 //	printf("format is: '%s'", format);
 	if (!(sz_f = is_valid(format)))
 		return (0);
-//	printf("is valid !\n");
-//	printf("Size: %d!\n", sz_f);
+	printf("is valid !\n");
+	printf("Size: %d!\n", sz_f);
 	return (sz_f);
 }
