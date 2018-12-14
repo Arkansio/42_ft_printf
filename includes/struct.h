@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 20:47:07 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 21:24:36 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int 			get_min_width(const char *str, int max);
 int				get_precision(const char *str, int max);
 void			*get_typefunc(const char c);
 void			ft_lstaddend(t_list **alst, t_list *new);
+void			ft_parse_properties(t_proper *proper, const char *str, int max);
 void			ft_convert(t_list **lst, const char *str, int max);
 void			ft_strlst_read(t_list **alst);
 int				ft_validconv(const char *format);
