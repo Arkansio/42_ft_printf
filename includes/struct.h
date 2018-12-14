@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 21:24:36 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 22:49:04 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,11 @@ enum e_flags {
 	ll = 8,
 	L = 9,
 	end = -1
-}; 
-
-typedef struct		s_args // args list
-{
-	int				flags;
-	struct s_args	*next;
-}					t_args;
+};
 
 typedef	struct		s_proper // pass to g_types functions
 {
-	t_args			*flags;
+	t_list			*flags;
 	void			*value;
 	int				precision;
 	int				min_w;
@@ -60,11 +54,13 @@ typedef struct	s_flags // flags list in order of priority
 	char			*c_val;
 }				t_flags; 	
 
-enum e_flags	get_flag(const char *c);
+int				pass_precision(const char *str, int max);
 int 			get_min_width(const char *str, int max);
 int				get_precision(const char *str, int max);
 void			*get_typefunc(const char c);
 void			ft_lstaddend(t_list **alst, t_list *new);
+int				get_flag(const char *c, enum e_flags *flag);
+void			ft_parse_flags(t_proper **lst, const char *str, int max);
 void			ft_parse_properties(t_proper *proper, const char *str, int max);
 void			ft_convert(t_list **lst, const char *str, int max);
 void			ft_strlst_read(t_list **alst);
