@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 02:16:03 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 02:25:11 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct	s_flags // flags list in order of priority
 }				t_flags;	
 
 enum e_flags	get_flag(const char *c);
-void			*get_convert(const char c);
+void			*get_typefunc(const char c);
 void			ft_lstaddend(t_list **alst, t_list *new);
 void			ft_strlst_read(t_list **alst);
 int				ft_validconv(const char *format);

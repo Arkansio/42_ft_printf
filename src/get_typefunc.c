@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_convert.c                                      :+:      :+:    :+:   */
+/*   get_typefunc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 02:12:11 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 02:14:41 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/14 02:24:52 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "globales.h"
 
-void 	*get_convert(const char c)
+void 	*get_typefunc(const char c)
 {
 	int		i;
 
