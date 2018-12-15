@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 20:02:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/15 22:16:14 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void		add_part(const char *format, t_list **alst, int i, int sz_cast)
 		exit(EXIT_FAILURE);
 	if (!(lst = ft_lstnew((void*)new, (size_t)(i + sz_cast))))
 		exit(EXIT_FAILURE);
+	free(new);
 	ft_lstaddend(alst, lst);
 }
 
