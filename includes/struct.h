@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 03:56:25 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/15 20:29:51 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct	s_flags // flags list in order of priority
 	char			*c_val;
 }				t_flags; 	
 
+int				pass_min_width(const char *str, int max);
 int				pass_precision(const char *str, int max);
 int 			get_min_width(const char *str, int max);
 int				get_precision(const char *str, int max);

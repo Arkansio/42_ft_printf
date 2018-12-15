@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 21:46:34 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 20:10:37 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/15 20:31:41 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void			ft_parse_flags(t_list **lst, const char *str, int max)
 	while (++i < max)
 	{	
 		if ((sz = pass_precision(&str[i], max)) >= 1)
+			i += sz - 1;
+		else if ((sz = pass_min_width(&str[i], max)) >= 1)
 			i += sz - 1;
 		else if((sz = get_flag(&str[i], &flag)))
 		{
