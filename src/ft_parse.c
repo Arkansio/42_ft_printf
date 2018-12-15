@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 22:16:14 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/15 23:58:36 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		add_part(const char *format, t_list **alst, int i, int sz_cast)
 	ft_lstaddend(alst, lst);
 }
 
-t_list			*ft_parse(const char *format)
+t_list			*ft_parse(const char *format, va_list *args)
 {
     int		i;
 	int		sz_cast;
@@ -40,7 +40,7 @@ t_list			*ft_parse(const char *format)
 		if((sz_cast = ft_validconv(&format[i])))
 		{
 			add_part(format, &alst, i, sz_cast);
-			ft_convert(&alst, &format[i], sz_cast);
+			ft_convert(&alst, &format[i], sz_cast, args);
 			format += i + sz_cast;
 			i = 0;
 		}

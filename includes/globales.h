@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 03:45:23 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/12 20:13:51 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/16 00:42:58 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ static t_flags				g_flags[] =
 
 static t_type				g_types[] =
 {
-	{'c', &ft_atoi},
-	{'s', &ft_atoi},
-	{'p', &ft_atoi},
-    {'d', &ft_atoi},
-    {'i', &ft_atoi},
-    {'o', &ft_atoi},
-    {'u', &ft_atoi},
-    {'x', &ft_atoi},
-	{'X', &ft_atoi},
-	{'f', &ft_atoi},
-	{'%', &ft_atoi},
+	{'c', &_p_float},
+	{'s', &_p_float},
+	{'p', &_p_float},
+    {'d', &_p_float},
+    {'i', &_p_float},
+    {'o', &_p_float},
+    {'u', &_p_float},
+    {'x', &_p_float},
+	{'X', &_p_float},
+	{'f', &_p_float},
+	{'%', &_p_float},
 	{'0', NULL}
 };
 

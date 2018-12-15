@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 20:29:51 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/16 00:43:40 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,29 @@ typedef	struct		s_proper // pass to g_types functions
 typedef struct		s_type // type to functions
 {
 	char	type;
-	void	*func;
+	char 	*(*func)(t_proper *properties, va_list *args);
 }					t_type;
 
 typedef struct	s_flags // flags list in order of priority
 {
 	enum e_flags	flags_id;
 	char			*c_val;
-}				t_flags; 	
+}				t_flags;
 
+char			*_p_float(t_proper *properties, va_list *args);
 int				pass_min_width(const char *str, int max);
 int				pass_precision(const char *str, int max);
 int 			get_min_width(const char *str, int max);
 int				get_precision(const char *str, int max);
-void			*get_typefunc(const char c);
+int				get_typefunc(const char c);
 void			ft_lstaddend(t_list **alst, t_list *new);
 int				get_flag(const char *c, enum e_flags *flag);
 void			ft_parse_flags(t_list **lst, const char *str, int max);
 void			ft_parse_properties(t_proper *proper, const char *str, int max);
-void			ft_convert(t_list **lst, const char *str, int max);
+void			ft_convert(t_list **lst, const char *str, int max, va_list *args);
 void			ft_strlst_read(t_list **alst);
 int				ft_validconv(const char *format);
-t_list			*ft_parse(const char *format);
-void			ft_parse_rd(const char *str);
+t_list			*ft_parse(const char *format, va_list *args);
+void			ft_parse_rd(const char *str, va_list *ap);
 
 #endif
