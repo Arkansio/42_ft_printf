@@ -6,13 +6,13 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:40:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 22:51:08 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/16 23:15:43 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-void        ft_putfaststr(char *str, int max)
+void        ft_putfaststr(const char *str, int max)
 {
 	int     i;
 
