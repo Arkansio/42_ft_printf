@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 00:02:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/16 23:04:59 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int		main()
 //	printf("%+50.20d\n", 200);
 //	printf("Hello%}Marco !\n");
 //	printf("Hello%.5hhh}sMarco !\n", "test");
-	ft_printf("Hello%fMarco !\n", 5000);
+	ft_printf("Hello ca va % s?\n", "Marco");
 	//ft_printf("");
 }

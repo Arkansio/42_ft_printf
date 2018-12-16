@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 21:46:34 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 20:31:41 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/16 23:05:37 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void			ft_parse_flags(t_list **lst, const char *str, int max)
 	int				sz;
 
 	i = 0;
-	printf("Str: %s\n", str);
-	printf("Max -> %d\n", max);
+//	printf("Str: %s\n", str);
+//	printf("Max -> %d\n", max);
 	while (++i < max)
 	{	
 		if ((sz = pass_precision(&str[i], max)) >= 1)
@@ -45,7 +45,7 @@ void			ft_parse_flags(t_list **lst, const char *str, int max)
 			i += sz - 1;
 			add_flag(lst, flag);
 		}
-		printf("While -> %d\n", i);
+//		printf("While -> %d\n", i);
 	}
-	printf("Fin -> %d\n", i);
+//	printf("Fin -> %d\n", i);
 }

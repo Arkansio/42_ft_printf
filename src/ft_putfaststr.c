@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_float.c                                         :+:      :+:    :+:   */
+/*   ft_putfaststr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 22:42:38 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/16 22:40:54 by mgessa            #+#    #+#             */
+/*   Updated: 2018/12/16 22:51:08 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-char        *_p_float(t_proper *properties, va_list *args)
+void        ft_putfaststr(char *str, int max)
 {
-    (void)properties;
-    printf("_p_float\n");
-    printf("%f", va_arg(*args, double));
-    return (NULL);
+	int     i;
+
+	i = ft_strlen(str);
+	if (i > max && max != -1)
+		i = max;
+	if (i >= 1)
+		write(1, str, i);
 }

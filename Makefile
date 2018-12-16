@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/16 00:04:49 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/16 22:43:26 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ SRCS = ft_printf.c \
 		pass_precision.c \
 		ft_parse_flags.c \
 		pass_min_width.c \
-		_p_float.c
+		ft_putfaststr.c \
+		_p_float.c \
+		_p_string.c 
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
