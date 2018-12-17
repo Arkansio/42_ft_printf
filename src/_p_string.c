@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:33:20 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 03:13:10 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 03:29:59 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int			_p_string(t_proper *properties, va_list *args)
 
 	str = va_arg(*args, char *);
 	chain_z = properties->precision;
-	printf("Min width: %d\n", properties->min_w);
-	printf("Precision: %d\n", properties->precision);
 	if (properties->precision == -1)
 		chain_z = ft_strlen(str);
 
