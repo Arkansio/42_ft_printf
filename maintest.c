@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:51:02 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 03:00:18 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ int		main()
 	printf("%10{s\n", "Test hello");
 	ft_printf("%10{s\n", "Test hello");
 	//ft_printf("");
+	printf("%10.5s Hello\n", "Test hello");
+	ft_printf("%10.5s Hello\n", "Test hello");
 }
