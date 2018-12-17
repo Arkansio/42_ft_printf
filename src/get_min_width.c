@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 20:43:03 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/15 20:28:02 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 03:27:26 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int  get_min_width(const char *str, int max)
             while (ft_isdigit(str[i]) && i < max)
                 i++;
         }
-        i++;
+        else
+            i++;
     }
     return (value);
 }
