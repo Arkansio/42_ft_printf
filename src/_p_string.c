@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:33:20 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 23:08:21 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 02:44:27 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 
 char        *_p_string(t_proper *properties, va_list *args)
 {
-    (void)properties;
-//    printf("o-o-o-o-o _p_string o-o-o-o-o\n\n");
-    ft_putfaststr(va_arg(*args, char *), properties->precision);
+    char	*str;
+	int		chain_z;
+
+	str = va_arg(*args, char *);
+	chain_z = ft_strlen(str);
+ //   printf("o-o-o-o-o _p_string o-o-o-o-o\n\n");
+	if (properties->min_w > chain_z)
+		ft_write_multiple(properties->min_w - chain_z, ' ');
+	if (properties->precision == -1 || properties->precision > chain_z)
+		ft_putfaststr(str, chain_z + 1);
+    else
+		ft_putfaststr(str, properties->precision);
     return (NULL);
 }

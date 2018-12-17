@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/16 23:56:09 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/17 02:40:10 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS = ft_printf.c \
 		ft_putfaststr.c \
 		_p_float.c \
 		_p_string.c \
-		_p_modulo.c
+		_p_modulo.c \
+		ft_write_multiple.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \

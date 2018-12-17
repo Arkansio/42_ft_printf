@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 00:13:30 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 02:44:58 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int		main()
 //a	ft_printf("%s", "Marco\n");
 //	ft_printf("", "Marco\n");
 //	ft_printf("Hello %.50s", "Marco\n");
-	ft_printf("Modulo print is: %.50%", "Marco\n");
+//	printf("Modulo print is: %.%\n", "Marco\n");
+//	ft_printf("Modulo print is: %.%\n", "Marco\n");
+	printf("%10s\n", "Test hello");
+	ft_printf("%10s\n", "Test hello");
 	//ft_printf("");
 }

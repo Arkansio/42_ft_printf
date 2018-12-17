@@ -6,17 +6,11 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 23:54:06 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:06:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 02:38:59 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
-
-void        ft_write_multiple(int sz, char c)
-{
-    while (sz-- > 0)
-        write(1, &c, 1);
-}
 
 char        *_p_modulo(t_proper *properties, va_list *args)
 {
