@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putfaststr.c                                    :+:      :+:    :+:   */
+/*   _p_modulo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 22:40:54 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 23:45:44 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/16 23:54:06 by mgessa            #+#    #+#             */
+/*   Updated: 2018/12/17 00:23:42 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-void        ft_putfaststr(const char *str, int max)
+char        *_p_modulo(t_proper *properties, va_list *args)
 {
-	int     i;
+    (void)properties;
+    (void)args;
 
-	i = ft_strlen(str);
-	if (i > max && max >= 0)
-		i = max;
-	if (i >= 1)
-		write(1, str, i);
+    ft_putfaststr("%%", 1);
+    return (NULL);
 }
