@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:49:43 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 22:34:22 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct	s_flags // flags list in order of priority
 
 void			ft_write_multiple(int sz, char c);
 void        	ft_putfaststr(const char *str, int max);
+int				_p_char(t_proper *properties, va_list *args);
 int				_p_modulo(t_proper *properties, va_list *args);
 int				_p_string(t_proper *properties, va_list *args);
 int				_p_float(t_proper *properties, va_list *args);
