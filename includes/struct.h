@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:39:42 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 02:49:43 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef	struct		s_proper // pass to g_types functions
 typedef struct		s_type // type to functions
 {
 	char	type;
-	char 	*(*func)(t_proper *properties, va_list *args);
+	int		(*func)(t_proper *properties, va_list *args);
 }					t_type;
 
 typedef struct	s_flags // flags list in order of priority
@@ -56,9 +56,9 @@ typedef struct	s_flags // flags list in order of priority
 
 void			ft_write_multiple(int sz, char c);
 void        	ft_putfaststr(const char *str, int max);
-char			*_p_modulo(t_proper *properties, va_list *args);
-char			*_p_string(t_proper *properties, va_list *args);
-char			*_p_float(t_proper *properties, va_list *args);
+int				_p_modulo(t_proper *properties, va_list *args);
+int				_p_string(t_proper *properties, va_list *args);
+int				_p_float(t_proper *properties, va_list *args);
 int				pass_min_width(const char *str, int max);
 int				pass_precision(const char *str, int max);
 int 			get_min_width(const char *str, int max);

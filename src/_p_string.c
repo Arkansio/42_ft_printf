@@ -6,13 +6,13 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:33:20 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:44:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/17 02:48:58 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-char        *_p_string(t_proper *properties, va_list *args)
+int			_p_string(t_proper *properties, va_list *args)
 {
     char	*str;
 	int		chain_z;
@@ -26,5 +26,8 @@ char        *_p_string(t_proper *properties, va_list *args)
 		ft_putfaststr(str, chain_z + 1);
     else
 		ft_putfaststr(str, properties->precision);
-    return (NULL);
+	if (properties->min_w > chain_z)
+    	return (properties->min_w);
+	else
+		return (chain_z);
 }
