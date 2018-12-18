@@ -6,13 +6,13 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 18:43:50 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:55:57 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/18 01:39:12 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "globales.h"
 
-void        ft_convert(t_list **lst, const char *str, int max, va_list *args)
+int			ft_convert(const char *str, int max, va_list *args)
 {
 	t_proper    properties;
 	int			i_tab;
@@ -22,14 +22,10 @@ void        ft_convert(t_list **lst, const char *str, int max, va_list *args)
 	ft_parse_properties(&properties, str, max);
 	i_tab = get_typefunc(str[max - 1]);
 
-	(void)lst;
 //	printf("\nPrecision: %d\n", properties.precision);
 //	printf("Min_width: %d\n\n", properties.min_w);
 	if (i_tab != -1)
-	{
-//		printf("\nNOT NULL !\nTYPE IS: %c\n\n", str[max - 1]);
-		g_types[i_tab].func(&properties, args);
-	}
-	else
-		ft_write_multiple(properties.min_w - 1, ' ');
+		return (g_types[i_tab].func(&properties, args));
+	ft_write_multiple(properties.min_w - 1, ' ');
+	return (properties.min_w >= 0 ? properties.min_w : 0);
 }

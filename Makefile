@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/17 22:34:37 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/18 01:39:51 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = libftprintf.a
 
 SRCS = ft_printf.c \
 		ft_parse_rd.c \
-		ft_parse.c \
 		ft_validconv.c \
 		ft_strlst_read.c \
 		ft_lstaddend.c \

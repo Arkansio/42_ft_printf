@@ -5,17 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 01:54:39 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 23:29:58 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
+/*   Updated: 2018/12/18 01:39:28 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-void	ft_parse_rd(const char *str, va_list *ap)
+int			ft_parse_rd(const char *format, va_list *args)
 {
+    int		i;
+	int		sz_cast;
+	int		total_sz;
+	int		sz_convert;
 
-	ft_parse(str, ap);
-//	ft_strlst_read(&new);
-//	ft_putstr(new);
+	total_sz = 0;
+	i = -1;
+	while (format[++i] != '\0')
+	{
+		if((sz_cast = ft_validconv(&format[i])))
+		{
+			ft_putfaststr(format, i);
+			total_sz += i;
+			if ((sz_convert = ft_convert(&format[i], sz_cast, args)) == -1)
+				return (-1);
+			total_sz += sz_convert;
+			format += i + sz_cast;
+			i = 0;
+		}
+		else if (format[i + 1] == '\0')
+			ft_putfaststr(format, -1);
+	}
+    return (total_sz);
 }
