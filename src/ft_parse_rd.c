@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/18 03:26:20 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/18 03:34:51 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int			ft_parse_rd(const char *format, va_list *args)
 	taille = ft_strlen(format);
 //	printf("Ft strlen: %d\n", taille);
 	total_sz = 0;
-	i = -1;
-	while (format[++i] != '\0')
+	i = 0;
+	while (format[i] != '\0')
 	{
 		if((sz_cast = ft_validconv(&format[i])))
 		{
@@ -41,7 +41,10 @@ int			ft_parse_rd(const char *format, va_list *args)
 		{
 			total_sz += i + 1;
 			ft_putfaststr(format, -1);
+			i++;
 		}
+		else
+			i++;
 	}
     return (total_sz);
 }
