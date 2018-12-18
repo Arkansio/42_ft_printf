@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 18:43:50 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/18 01:39:12 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/18 22:09:02 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int			ft_convert(const char *str, int max, va_list *args)
 
 //	printf("\nPrecision: %d\n", properties.precision);
 //	printf("Min_width: %d\n\n", properties.min_w);
+	if (max == 1)
+		return (0);
 	if (i_tab != -1)
 		return (g_types[i_tab].func(&properties, args));
 	ft_write_multiple(properties.min_w - 1, ' ');
