@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 23:07:08 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/18 03:25:54 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,6 @@ int		main()
 	printf("%4.7s Hello\n", "Test hello");
 	ft_printf("%4.7s Hello\n", "Test hello");
 
-	char tab[10];
-	tab[0] = 'a';
-	tab[1] = 'b';
-	tab[2] = 2;
-	tab[3] = 'c';
-	printf("%.7 20s Hello\n%0%\n", tab);
-	ft_printf("%.7 20s Hello\n%0%\n", tab);
-
-	printf("\n");
-
-	printf("%4.7c Hello\n", 'a');
-	ft_printf("%4.7c Hello\n", 'a');
+	printf("%ssa Hello\n", "Test hello");
+	ft_printf("%ssa Hello\n", "Test hello");
 }
