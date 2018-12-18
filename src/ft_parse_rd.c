@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/18 02:36:41 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/18 03:08:46 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ int			ft_parse_rd(const char *format, va_list *args)
 	int		sz_cast;
 	int		total_sz;
 	int		sz_convert;
+	int		taille;
 
+	taille = ft_strlen(format);
+	printf("Ft strlen: %d\n", taille);
 	total_sz = 0;
 	i = -1;
-	while (format[++i] != '\0')
+	while (++i < taille)
 	{
 		if((sz_cast = ft_validconv(&format[i])))
 		{
@@ -30,6 +33,7 @@ int			ft_parse_rd(const char *format, va_list *args)
 			if ((sz_convert = ft_convert(&format[i], sz_cast, args)) == -1)
 				return (-1);
 			total_sz += sz_convert;
+//			printf("New size: %d", i + sz_cast);
 			format += i + sz_cast;
 			i = 0;
 		}
@@ -38,7 +42,9 @@ int			ft_parse_rd(const char *format, va_list *args)
 			total_sz += i + 1;
 			ft_putfaststr(format, -1);
 		}
+//		printf("While %d\n", i);
+//		ft_putstr(&format[i]);
 	}
-	printf("El gato %d\n", total_sz);
+//	printf("El gato %d\n", total_sz);
     return (total_sz);
 }
