@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 03:45:23 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 22:34:13 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/19 23:07:46 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static t_type				g_types[] =
 	{'c', &_p_char},
 	{'s', &_p_string},
 	{'p', &_p_float},
-    {'d', &_p_float},
-    {'i', &_p_float},
+    {'d', &_p_int},
+    {'i', &_p_int},
     {'o', &_p_float},
     {'u', &_p_float},
     {'x', &_p_float},

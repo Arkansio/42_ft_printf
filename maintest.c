@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/19 03:30:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/19 23:42:20 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ int		main()
 //	ft_printf("Hello %.50s", "Marco\n");
 //	printf("Modulo print is: %.%\n", "Marco\n");
 //	ft_printf("Modulo print is: %.%\n", "Marco\n");
-	printf("%10{s\n", "Test hello");
+/*	printf("%10{s\n", "Test hello");
 	ft_printf("%10{s\n", "Test hello");
 	//ft_printf("");
 	printf("%10.5s Hello\n", "Test hello");
 	ft_printf("%10.5s Hello\n", "Test hello");
 
 	printf("%4.7s Hello\n", "Test hello");
-	ft_printf("%4.7s Hello\n", "Test hello");
+	ft_printf("%4.7s Hello\n", "Test hello"); */
 
-	printf("%20.7 0s Hello\n", "Test hello");
-	ft_printf("%20.7 0s Hello\n", "Test hello");
+	printf("%20.-7 0s Hello\n", "Test hello123");
+	ft_printf("%20.-7 0s Hello\n", "Test hello123");
 
-	printf("%ssa Hello\n", "Test hello");
+/*	printf("%ssa Hello\n", "Test hello");
 	ft_printf("%ssa Hello\n", "Test hello");
 
 	printf("%%\n", "Test hello");
@@ -59,5 +59,27 @@ int		main()
 	printf("%20 0%\n", "Test hello");
 	ft_printf("%20 0%\n", "Test hello");
 
+	printf("%05%\n"); 
 	ft_printf("%05%\n"); 
+
+	printf("%.-50s\n", "Test hello");
+	ft_printf("%.-50s\n", "Test hello");
+
+	printf("%.100-50s\n%s\n", "Hello Marco", "Test123");
+	ft_printf("%.100-50s\n%s\n", "Hello Marco", "Test123");
+
+	printf("Result :%d\n", 25);
+	ft_printf("Result :%d\n", 25);
+
+
+	printf("Result :%10d\n", 25);
+	ft_printf("Result :%10d\n", 25);
+
+	printf("Result :%10 .5d\n", 25);
+	ft_printf("Result :%10 .5d\n", 25);
+
+//	printf("Result :%10 .3d\n", 25);
+//	ft_printf("Result :%10 .-3d\n", 25);
+
+	printf("Result :%10 .5f\n", 25); */
 }
