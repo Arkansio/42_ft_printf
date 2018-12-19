@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 20:41:30 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 20:49:38 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/19 23:47:56 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int  get_precision(const char *str, int max)
     while (i < max)
     {
         if (str[i] == '.')
+        {
             val = ft_atoi(&str[i + 1]);
+            if (val < 0)
+                val = 0;
+        }
         i++;
     }
     return (val);
