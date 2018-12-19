@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 20:39:16 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 23:07:29 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/19 23:36:36 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void        ft_parse_properties(t_proper *proper, const char *str, int max)
 {
     proper->flags = NULL;
     proper->precision = get_precision(str, max);
+    if (proper->precision < 0)
+        proper->precision = -1;
     proper->min_w = get_min_width(str, max);
     ft_parse_flags(&proper->flags, str, max);
 
