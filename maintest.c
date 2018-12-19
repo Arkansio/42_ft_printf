@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/18 03:37:31 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/19 03:30:27 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,17 @@ int		main()
 	printf("%4.7s Hello\n", "Test hello");
 	ft_printf("%4.7s Hello\n", "Test hello");
 
+	printf("%20.7 0s Hello\n", "Test hello");
+	ft_printf("%20.7 0s Hello\n", "Test hello");
+
 	printf("%ssa Hello\n", "Test hello");
 	ft_printf("%ssa Hello\n", "Test hello");
 
-	ft_printf("%%", "Test hello");
+	printf("%%\n", "Test hello");
+	ft_printf("%%\n", "Test hello");
+
+	printf("%20 0%\n", "Test hello");
+	ft_printf("%20 0%\n", "Test hello");
+
+	ft_printf("%05%\n"); 
 }
