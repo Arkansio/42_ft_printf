@@ -1,2 +1,7 @@
 {
+    "C_Cpp.default.includePath": [
+        "${workspaceRoot}",
+        "${workspaceRoot}/includes/",
+        "${workspaceRoot}/libft/includes"
+    ]
 }
