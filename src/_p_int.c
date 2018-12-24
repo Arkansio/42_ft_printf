@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/24 02:29:21 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/24 03:10:34 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ int				_p_int(t_proper *properties, va_list *args)
 	sz = int_size(val);
 //	print_first_padding(properties, &sz);
 //	printf("\nSize: %d\n", sz);
-	ft_putnbrl(val);
+    if (val != 0)
+	    ft_putnbrl(val);
+    printf("Size: %d\n", sz);
 //	print_end_padding(properties, &sz); 
 	return (sz); 
 }
