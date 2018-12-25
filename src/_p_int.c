@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 06:18:21 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 06:20:48 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,15 +123,12 @@ int				_p_int(t_proper *properties, va_list *args)
 	sz = int_size(val);
 //	print_first_padding(properties, &sz);
 //	printf("\nSize: %d\n", sz);
-    if (val != 0)
-    {
-	    str = itoa_long(val);
-        first_pad(sz, properties, &total_sz, val);
-        ft_putfaststr(str, -1);
-		second_pad(sz, properties, val);
-		total_sz += ft_strlen(str);
-        free(str);
-    }
+	str = itoa_long(val);
+    first_pad(sz, properties, &total_sz, val);
+    ft_putfaststr(str, -1);
+	second_pad(sz, properties, val);
+	total_sz += ft_strlen(str);
+    free(str);
 //    printf("Size: %d\n", sz);
 //	print_end_padding(properties, &sz); 
 	return (total_sz);
