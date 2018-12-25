@@ -3,5 +3,8 @@
         "${workspaceRoot}",
         "${workspaceRoot}/includes/",
         "${workspaceRoot}/libft/includes"
-    ]
+    ],
+    "files.associations": {
+        "limits.h": "c"
+    }
 }

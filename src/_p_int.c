@@ -6,11 +6,12 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/24 03:10:34 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 02:18:22 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
+#include <limits.h>
 
 static int	int_size(long long int nb)
 {
@@ -22,6 +23,7 @@ static int	int_size(long long int nb)
     return (i);
 }
 
+/*
 static void		ft_putnbrl(long long n)
 {
 	long long temp;
@@ -43,7 +45,7 @@ static void		ft_putnbrl(long long n)
 		size /= 10;
 		ft_putchar('0' + nb_res);
 	}
-}
+} */
 
 
 int				_p_int(t_proper *properties, va_list *args)
@@ -70,8 +72,8 @@ int				_p_int(t_proper *properties, va_list *args)
 //	print_first_padding(properties, &sz);
 //	printf("\nSize: %d\n", sz);
     if (val != 0)
-	    ft_putnbrl(val);
-    printf("Size: %d\n", sz);
+	    ft_putfaststr(itoa_long(val), -1);
+//    printf("Size: %d\n", sz);
 //	print_end_padding(properties, &sz); 
 	return (sz); 
 }

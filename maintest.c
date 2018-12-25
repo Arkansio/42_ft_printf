@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/24 02:32:36 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 02:21:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ int		main()
 //	ft_printf("%.100-50s\n%s\n", "Hello Marco", "Test123");
 
 	printf("o-o-o int test o-o-o\n\n");
+
+	printf("Result :%.3d\n", 25);
+	ft_printf("Result :%.3d\n\n", 25);
 
 	printf("Result :%d\n", 25);
 	ft_printf("Result :%d\n\n", 25);
@@ -138,5 +141,21 @@ int		main()
 
 	printf("Result :%10.-3ld Hello\n", 12345678912345678912);
 	ft_printf("Result :%10.-3ld Hello\n\n", 12345678912345678912);
+
+	printf("o-o-o long long int test o-o-o\n\n");
+
+	printf("Result :%10.-3lld Hello\n", 12345678912345678);
+	ft_printf("Result :%10.-3lld Hello\n\n", 12345678912345678);
+
+
+	printf("Result :%10.-3lld Hello\n", -9223372036854775808);
+	ft_printf("Result :%10.-3lld Hello\n\n", -9223372036854775808);
+
+	printf("Result :%10.-3lld Hello\n", 9223372036854775807);
+	ft_printf("Result :%10.-3lld Hello\n\n", 9223372036854775807);
+
+	printf("Result :%10.-3d Hello\n", 9223372036854775807);
+	ft_printf("Result :%10.-3d Hello\n\n", 9223372036854775807);
+
 //	printf("Result :%10 .5f\n", 25);
 }
