@@ -6,14 +6,21 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 04:38:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 06:05:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include "unistd.h"
+
+#define SUCCESS "\x1b[32m  ▒ ▒ ▒ Success! ▒ ▒ ▒ \x1b[0m\n\n"
+
+#define FAILURE "\x1b[31m  ▒ ▒ ▒ Failure! ▒ ▒ ▒ \x1b[0m\n"
+
 int		main()
 {
+	int nb1;
+	int nb2;
 /*	printf("%20.8d\n", 25);
 	printf("%20.8d\n", 252);
 	printf("%20.8d\n", 2511);
@@ -68,53 +75,253 @@ int		main()
 //	printf("%.100-50s\n%s\n", "Hello Marco", "Test123");
 //	ft_printf("%.100-50s\n%s\n", "Hello Marco", "Test123");
 
+
+
+
+
 	printf("o-o-o int test o-o-o\n\n");
 
-	printf("Result :%.3d\n", 25);
-	ft_printf("Result :%.3d\n\n", 25);
+	char	t1[] = "Result : %.3d\n";
+	nb1 = printf(t1, 250);
+	nb2 = ft_printf(t1, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Result :%d\n", 25);
-	ft_printf("Result :%d\n\n", 25);
 
-	printf("Result :%10d\n", 25);
-	ft_printf("Result :%10d\n\n", 25);
+////
 
-	printf("Result :%10 .5d\n", 25);
-	ft_printf("Result :%10 .5d\n\n", 25);
+	char	t2[] = "Result : %d\n";
+	nb1 = printf(t2, 250);
+	nb2 = ft_printf(t2, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Result :%10 .-3d\n", 25);
-	ft_printf("Result :%10 .-3d\n\n", 25);
+///
 
-	printf("Result :%2 .-3d\n", 25);
-	ft_printf("Result :%2 .-3d\n\n", 25);
 
-	printf("Result :%-10d\n", 25);
-	ft_printf("Result :%-10d\n\n", 25);
+	char	t3[] = "Result : %10d\n";
+	nb1 = printf(t3, 250);
+	nb2 = ft_printf(t3, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Result :%10 0d\n", 25);
-	ft_printf("Result :%10 0d\n\n", 25);
+///
 
-	printf("Result :%-10 0d\n", 500000000);
-	ft_printf("Result :%-10 0d\n\n", 500000000);
+	char	t4[] = "Result : %10 .5d\n";
+	nb1 = printf(t4, 250);
+	nb2 = ft_printf(t4, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Result :%10.-3d Hello\n", 25);
-	ft_printf("Result :%10.-3d Hello\n\n", 25);
+///
 
-	printf("Result :%.3 d Hello\n", 25);
-	ft_printf("Result :%.3 d Hello\n\n", 25);
+	char	t5[] = "Result : % .-3d\n";
+	nb1 = printf(t5, 250);
+	nb2 = ft_printf(t5, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Result :% d Hello\n", 25);
-	ft_printf("Result :% d Hello\n\n", 25);
+///
 
-	printf("Result :%-d Hello\n", 25);
-	ft_printf("Result :%-d Hello\n\n", 25);
+	char	t6[] = "Result : %2 .-3d\n";
+	nb1 = printf(t6, 250);
+	nb2 = ft_printf(t6, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Result :%10-d Hello\n", 25);
-	ft_printf("Result :%10-d Hello\n\n", 25);
+///
 
-	printf("Result :%10.4-d Hello\n", 25);
-	ft_printf("Result :%10.4-d Hello\n\n", 25);
+	char	t7[] = "Result : %2-10d\n";
+	nb1 = printf(t7, 250);
+	nb2 = ft_printf(t7, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
+
+///
+
+	char	t8[] = "Result : %10 0d\n";
+	nb1 = printf(t8, 250);
+	nb2 = ft_printf(t8, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+///
+
+	char	t9[] = "Result : %-10 0d\n";
+	nb1 = printf(t9, 250);
+	nb2 = ft_printf(t9, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t10[] = "Result : %10.-3d\n";
+	nb1 = printf(t10, 250);
+	nb2 = ft_printf(t10, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t11[] = "Result : %.3 d\n";
+	nb1 = printf(t11, 250);
+	nb2 = ft_printf(t11, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t12[] = "Result : % d\n";
+	nb1 = printf(t12, 250);
+	nb2 = ft_printf(t12, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t13[] = "Result : %-d\n";
+	nb1 = printf(t13, 250);
+	nb2 = ft_printf(t13, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+
+//
+
+
+	char	t14[] = "Result : %10-d\n";
+	nb1 = printf(t14, 250);
+	nb2 = ft_printf(t14, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t15[] = "Result : %10.4-d\n";
+	nb1 = printf(t15, 250);
+	nb2 = ft_printf(t15, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t16[] = "Result :%10.4+-d Hello\n";
+	nb1 = printf(t16, 250);
+	nb2 = ft_printf(t16, 250);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+
+//
+
+	char	t17[] = "Result :%10.4+-d Hello\n";
+	nb1 = printf(t16, -42);
+	nb2 = ft_printf(t16, -42);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 /*
 
 	printf("o-o-o char test o-o-o\n\n");
