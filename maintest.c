@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 04:31:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 04:38:27 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,15 @@ int		main()
 
 	printf("Result :% d Hello\n", 25);
 	ft_printf("Result :% d Hello\n\n", 25);
+
+	printf("Result :%-d Hello\n", 25);
+	ft_printf("Result :%-d Hello\n\n", 25);
+
+	printf("Result :%10-d Hello\n", 25);
+	ft_printf("Result :%10-d Hello\n\n", 25);
+
+	printf("Result :%10.4-d Hello\n", 25);
+	ft_printf("Result :%10.4-d Hello\n\n", 25);
 
 /*
 
