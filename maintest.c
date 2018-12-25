@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 02:21:32 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 04:31:01 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,14 @@ int		main()
 	printf("Result :%10.-3d Hello\n", 25);
 	ft_printf("Result :%10.-3d Hello\n\n", 25);
 
+	printf("Result :%.3 d Hello\n", 25);
+	ft_printf("Result :%.3 d Hello\n\n", 25);
+
+	printf("Result :% d Hello\n", 25);
+	ft_printf("Result :% d Hello\n\n", 25);
+
+/*
+
 	printf("o-o-o char test o-o-o\n\n");
 
 	printf("Result :%10.-3hhd Hello\n", 250);
@@ -155,7 +163,7 @@ int		main()
 	ft_printf("Result :%10.-3lld Hello\n\n", 9223372036854775807);
 
 	printf("Result :%10.-3d Hello\n", 9223372036854775807);
-	ft_printf("Result :%10.-3d Hello\n\n", 9223372036854775807);
+	ft_printf("Result :%10.-3d Hello\n\n", 9223372036854775807);  */
 
 //	printf("Result :%10 .5f\n", 25);
 }

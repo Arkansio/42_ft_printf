@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 02:18:22 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 04:25:19 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,43 @@ static void		ft_putnbrl(long long n)
 	}
 } */
 
+static void  first_pad(int sz, t_proper *properties)
+{
+    int precision;
+    int min_width;
+    int space_z;
+
+    min_width = 0;
+    precision = 0;
+    if (properties->precision != -1)
+        precision = properties->precision;
+    if (properties->min_w != -1)
+    {
+        min_width = properties->min_w;
+        if (contain_flag(properties, space))
+            min_width--;
+    }
+    if (contain_flag(properties, space))
+        ft_putchar(' ');
+    if (min_width > precision)
+        space_z = min_width - sz;
+    else
+        space_z = 0;
+    if (precision > sz)
+        space_z -= (precision - sz);
+//    printf("min width: [%d]\n", min_width);
+    if (min_width > sz && !contain_flag(properties, minus))
+        ft_write_multiple(space_z, contain_flag(properties, zero) ? '0' : ' ');
+    if (precision > sz)
+        ft_write_multiple(precision - sz, '0');
+}
+
 
 int				_p_int(t_proper *properties, va_list *args)
 {
-    long long int		val;
+    long long int	val;
     int             sz;
-    (void)properties;
+    char            *str;
 
 //	printf("Precision: %d\n", properties->precision);
     val = 0;
@@ -72,7 +103,12 @@ int				_p_int(t_proper *properties, va_list *args)
 //	print_first_padding(properties, &sz);
 //	printf("\nSize: %d\n", sz);
     if (val != 0)
-	    ft_putfaststr(itoa_long(val), -1);
+    {
+	    str = itoa_long(val);
+        first_pad(sz, properties);
+        ft_putfaststr(str, -1);
+        free(str);
+    }
 //    printf("Size: %d\n", sz);
 //	print_end_padding(properties, &sz); 
 	return (sz); 
