@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 06:47:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 07:11:34 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	int_size(long long int nb)
     int     i;
 
     i = 1;
-	if (nb < 0)
-		i++;
     while (nb /= 10)
         i++;
     return (i);
