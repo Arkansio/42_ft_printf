@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 06:20:12 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 06:40:54 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -312,8 +312,8 @@ int		main()
 //
 
 	char	t17[] = "Result :%10.4+-d Hello\n";
-	nb1 = printf(t16, -42);
-	nb2 = ft_printf(t16, -42);
+	nb1 = printf(t17, -42);
+	nb2 = ft_printf(t17, -42);
 	if (nb1 == nb2)
 		printf("%s", SUCCESS);
 	else
@@ -326,8 +326,21 @@ int		main()
 //
 
 	char	t18[] = "Result :%10.4+-d Hello\n";
-	nb1 = printf(t16, -0);
-	nb2 = ft_printf(t16, -0);
+	nb1 = printf(t18, -0);
+	nb2 = ft_printf(t18, -0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+//
+
+	char	t19[] = "Result : %d %d %d %d\n";
+	nb1 = printf(t19, -1, -2, 33, 42);
+	nb2 = ft_printf(t19, -1, -2, 33, 42);
 	if (nb1 == nb2)
 		printf("%s", SUCCESS);
 	else

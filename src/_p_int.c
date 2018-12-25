@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 06:30:32 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 06:47:24 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int	int_size(long long int nb)
     int     i;
 
     i = 1;
+	if (nb < 0)
+		i++;
     while (nb /= 10)
         i++;
     return (i);
@@ -54,6 +56,7 @@ static void  first_pad(int sz, t_proper *properties, int *total_sz, long long va
         ft_putchar(' ');
 	else if (val < 0)
 	{
+
 		ft_putchar('-');
 	}
     if (min_width > precision && (min_width - sz) > 0)
