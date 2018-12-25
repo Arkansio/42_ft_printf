@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 00:42:15 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 02:17:59 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 06:26:11 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static char		*ft_min_int(void)
 {
 	char	*str;
 
-	if (!(str = ft_strnew(20)))
+	if (!(str = ft_strnew(19)))
 		return (NULL);
-	ft_strcpy(str, "-9223372036854775808"); 
+	ft_strcpy(str, "9223372036854775808"); 
 	return (str);
 }
 
@@ -58,17 +58,11 @@ char			*itoa_long(long long int n)
 		return (ft_min_int());
 	if (n < 0)
 	{
-		symbol = 1;
 		n = -n;
 	}
 	ft_check_size(&size, &sz_i, n);
-	if (!(str = ft_strnew(sz_i + symbol)))
+	if (!(str = ft_strnew(sz_i )))
 		return (NULL);
-	if (symbol == 1)
-	{
-		*str = '-';
-		str++;
-	}
 	ft_load_itoa(str, n, size);
-	return (str - symbol);
+	return (str);
 }

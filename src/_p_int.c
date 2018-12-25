@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 06:20:48 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 06:30:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	int_size(long long int nb)
     int     i;
 
     i = 1;
-	if (nb < 0)
-		i++;
     while (nb /= 10)
         i++;
     return (i);
@@ -45,15 +43,19 @@ static void  first_pad(int sz, t_proper *properties, int *total_sz, long long va
     if (properties->min_w != -1)
     {
         min_width = properties->min_w;
-        if ((contain_flag(properties, space) || contain_flag(properties, plus)) && val > 0)
+        if ((contain_flag(properties, space) || contain_flag(properties, plus)) && val >= 0)
             decrement(&min_width, 1);
     }
-	if ((contain_flag(properties, space) || contain_flag(properties, plus)) && val > 0)
+	if ((contain_flag(properties, space) || contain_flag(properties, plus)) && val >= 0)
 		*total_sz += 1;
-	if (contain_flag(properties, plus) && val > 0)
+	if (contain_flag(properties, plus) && val >= 0)
 		ft_putchar('+');
-    else if (contain_flag(properties, space) && val > 0)
+    else if (contain_flag(properties, space) && val >= 0)
         ft_putchar(' ');
+	else if (val < 0)
+	{
+		ft_putchar('-');
+	}
     if (min_width > precision && (min_width - sz) > 0)
         space_z = min_width - sz;
     else
@@ -84,7 +86,7 @@ static void  second_pad(int sz, t_proper *properties, long long val)
     if (properties->min_w != -1)
     {
         min_width = properties->min_w;
-        if ((contain_flag(properties, space) || contain_flag(properties, plus)) && val > 0)
+        if ((contain_flag(properties, space) || contain_flag(properties, plus)) && val >= 0)
             min_width--;
     }
     if (min_width > precision)
@@ -127,7 +129,7 @@ int				_p_int(t_proper *properties, va_list *args)
     first_pad(sz, properties, &total_sz, val);
     ft_putfaststr(str, -1);
 	second_pad(sz, properties, val);
-	total_sz += ft_strlen(str);
+	total_sz += sz;
     free(str);
 //    printf("Size: %d\n", sz);
 //	print_end_padding(properties, &sz); 
