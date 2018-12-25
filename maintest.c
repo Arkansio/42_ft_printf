@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 06:49:54 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 18:40:42 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,8 +183,8 @@ int		main()
 ///
 
 	char	t8[] = "Result : %10 0d\n";
-	nb1 = printf(t8, 250);
-	nb2 = ft_printf(t8, 250);
+	nb1 = printf(t8, 255);
+	nb2 = ft_printf(t8, 255);
 	if (nb1 == nb2)
 		printf("%s", SUCCESS);
 	else
@@ -352,7 +352,7 @@ int		main()
 
 //
 
-	char	t20[] = "%4.15d\n";
+	char	t20[] = "%+6.4 d\n";
 	nb1 = printf(t20, 42);
 	nb2 = ft_printf(t20, 42);
 	if (nb1 == nb2)
