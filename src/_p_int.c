@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 18:47:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 23:49:26 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static int     print_prefix(t_proper *properties, long long val)
         ft_putchar('-');
     else if (contain_flag(properties, plus))
         ft_putchar('+');
+    else if (contain_flag(properties, space))
+        (void)val;
     else
         return (0);
     return (1);
@@ -81,10 +83,14 @@ int				_p_int(t_proper *properties, va_list *args)
         ft_putchar(' ');
     if (!contain_flag(properties, minus))
         ft_write_multiple(calcul_blank_w(properties, val), contain_flag(properties, zero) ? '0' : ' ');
-    print_prefix(properties, val);
+    total_sz += print_prefix(properties, val);
+    if (properties->precision > int_size(val))
+        total_sz += (properties->precision - int_size(val));
     if (properties->precision > int_size(val))
         ft_write_multiple(properties->precision - int_size(val), '0');
     ft_putfaststr(str, -1);
+    if (contain_flag(properties, minus))
+        ft_write_multiple(calcul_blank_w(properties, val), ' ');
     free(str);
-	return (total_sz);
+	return (total_sz + calcul_blank_w(properties, val) + int_size(val));
 }
