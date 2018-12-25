@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 01:50:16 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/25 23:57:26 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct	s_flags // flags list in order of priority
 	char			*c_val;
 }				t_flags;
 
-char			*itoa_long(long long int n);
+void			ft_putnbr_long(long long n);
 int				contain_flag(t_proper *props, enum e_flags flag);
 void			ft_write_multiple(int sz, char c);
 void        	ft_putfaststr(const char *str, int max);

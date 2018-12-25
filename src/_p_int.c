@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 23:49:26 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 00:04:09 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,28 +69,26 @@ static int     print_prefix(t_proper *properties, long long val)
 int				_p_int(t_proper *properties, va_list *args)
 {
     long long int	val;
-    char            *str;
 	int				total_sz;
+    int             int_sz;
 
-//	printf("Precision: %d\n", properties->precision);
     val = 0;
 	total_sz = 0;
     if (properties->precision == -1)
         properties->precision = 1;
     val = get_value(properties, args);
-	str = itoa_long(val);
+    int_sz = int_size(val);
     if (contain_flag(properties, space) && !contain_flag(properties, plus))
         ft_putchar(' ');
     if (!contain_flag(properties, minus))
         ft_write_multiple(calcul_blank_w(properties, val), contain_flag(properties, zero) ? '0' : ' ');
     total_sz += print_prefix(properties, val);
+    if (properties->precision > int_sz)
+        total_sz += (properties->precision - int_sz);
     if (properties->precision > int_size(val))
-        total_sz += (properties->precision - int_size(val));
-    if (properties->precision > int_size(val))
-        ft_write_multiple(properties->precision - int_size(val), '0');
-    ft_putfaststr(str, -1);
+        ft_write_multiple(properties->precision - int_sz, '0');
+    ft_putnbr_long(val);
     if (contain_flag(properties, minus))
         ft_write_multiple(calcul_blank_w(properties, val), ' ');
-    free(str);
-	return (total_sz + calcul_blank_w(properties, val) + int_size(val));
+	return (total_sz + calcul_blank_w(properties, val) + int_sz);
 }

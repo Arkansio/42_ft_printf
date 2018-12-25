@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/25 02:10:19 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/25 23:56:17 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRCS = ft_printf.c \
 		padding_char.c \
 		contain_flag.c \
 		_p_int.c \
-		itoa_long.c
+		ft_putnbr_long.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
