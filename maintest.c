@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 00:30:08 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 01:57:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -392,6 +392,20 @@ int		main()
 		printf("printf:    %d\n", nb1);
 		printf("ft_printf: %d\n\n", nb2);
 	}
+//
+
+	char	t23[] = "%0+5d\n";
+	nb1 = printf(t23, 42);
+	nb2 = ft_printf(t23, 42);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
 /*
 
 	printf("o-o-o char test o-o-o\n\n");

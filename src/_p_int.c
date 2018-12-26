@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 00:04:09 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 02:16:34 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ static int      calcul_blank_w(t_proper *properties, long long val)
 
 static int     print_prefix(t_proper *properties, long long val)
 {
+    if (properties->precision == -1)
+        properties->precision = 1;
     if (val < 0)
         ft_putchar('-');
     else if (contain_flag(properties, plus))
@@ -74,15 +76,16 @@ int				_p_int(t_proper *properties, va_list *args)
 
     val = 0;
 	total_sz = 0;
-    if (properties->precision == -1)
-        properties->precision = 1;
     val = get_value(properties, args);
     int_sz = int_size(val);
-    if (contain_flag(properties, space) && !contain_flag(properties, plus))
+    if ((contain_flag(properties, space) && !contain_flag(properties, plus)) && val >= 0)
         ft_putchar(' ');
+    if (contain_flag(properties, zero))
+        total_sz += print_prefix(properties, val);
     if (!contain_flag(properties, minus))
         ft_write_multiple(calcul_blank_w(properties, val), contain_flag(properties, zero) ? '0' : ' ');
-    total_sz += print_prefix(properties, val);
+    if (!contain_flag(properties, zero))
+        total_sz += print_prefix(properties, val);
     if (properties->precision > int_sz)
         total_sz += (properties->precision - int_sz);
     if (properties->precision > int_size(val))
