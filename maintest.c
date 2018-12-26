@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 03:07:58 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 03:23:55 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -494,6 +494,20 @@ int		main()
 	char	t30[] = "%.s\n";
 	nb1 = printf(t30, "test");
 	nb2 = ft_printf(t30, "test");
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t31[] = "'%5.d %5.0d'\n";
+	nb1 = printf(t31, 0, 0);
+	nb2 = ft_printf(t31, 0, 0);
 	if (nb1 == nb2)
 		printf("%s", SUCCESS);
 	else
