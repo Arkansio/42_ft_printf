@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 02:52:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 03:14:50 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,10 @@ int				_p_int(t_proper *properties, va_list *args)
         total_sz += (properties->precision - int_sz);
     if (properties->precision > int_sz)
         ft_write_multiple(properties->precision - int_sz, '0');
-    ft_putnbr_long(val);
+    if (val == 0 && properties->precision == 0)
+        total_sz--;
+    else
+        ft_putnbr_long(val);
     if (contain_flag(properties, minus))
         ft_write_multiple(calcul_blank_w(properties, val), ' ');
 	return (total_sz + calcul_blank_w(properties, val) + int_sz);

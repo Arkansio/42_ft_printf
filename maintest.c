@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 01:57:03 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 03:07:58 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -405,7 +405,103 @@ int		main()
 		printf("printf:    %d\n", nb1);
 		printf("ft_printf: %d\n\n", nb2);
 	}
+//
 
+	char	t24[] = "%03.2d\n";
+	nb1 = printf(t24, 0);
+	nb2 = ft_printf(t24, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t25[] = "%03.2d\n";
+	nb1 = printf(t25, 1);
+	nb2 = ft_printf(t25, 1);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+	char	t26[] = "%02.2d\n";
+	nb1 = printf(t26, 1);
+	nb2 = ft_printf(t26, 1);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t27[] = "%05 .4d\n";
+	nb1 = printf(t27, 1);
+	nb2 = ft_printf(t27, 1);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+
+//
+
+	char	t28[] = "%.d %.1dn\n";
+	nb1 = printf(t28, 0, 0);
+	nb2 = ft_printf(t28, 0, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+	char	t29[] = "%d\n";
+	nb1 = printf(t29, 0);
+	nb2 = ft_printf(t29, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+	//
+
+
+	char	t30[] = "%.s\n";
+	nb1 = printf(t30, "test");
+	nb2 = ft_printf(t30, "test");
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 /*
 
 	printf("o-o-o char test o-o-o\n\n");
