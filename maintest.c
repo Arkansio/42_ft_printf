@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 18:40:42 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/26 00:30:08 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -364,6 +364,34 @@ int		main()
 		printf("ft_printf: %d\n\n", nb2);
 	}
 
+//
+
+	char	t21[] = "%+6.4 d\n";
+	nb1 = printf(t21, 0);
+	nb2 = ft_printf(t21, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
+
+//
+
+
+	char	t22[] = "%d\n";
+	nb1 = printf(t22, 0);
+	nb2 = ft_printf(t22, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 /*
 
 	printf("o-o-o char test o-o-o\n\n");
