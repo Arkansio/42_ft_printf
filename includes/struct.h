@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/28 23:39:40 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 19:00:00 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void        	ft_putfaststr(const char *str, int max);
 void        	print_first_padding(t_proper *properties, int *chain_z);
 void        	print_end_padding(t_proper *properties, int *chain_z);
 char			*ft_itoa_base(int value, int base);
+long long int	get_number_flags(t_proper *properties, va_list *args);
 int				_p_octale(t_proper *properties, va_list *args);
 int				_p_int(t_proper *properties, va_list *args);
 int				_p_char(t_proper *properties, va_list *args);

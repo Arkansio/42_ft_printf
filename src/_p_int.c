@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 03:37:44 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 19:00:58 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,7 @@ static int	int_size(long long int nb)
     return (i);
 }
 
-static long long int get_value(t_proper *properties, va_list *args)
-{
-    if (contain_flag(properties, ll))
-        return va_arg(*args, long long int);
-    else if (contain_flag(properties, l))
-        return (long long int)va_arg(*args, long int);
-    else if (contain_flag(properties, h))
-        return (long long int)(short int)va_arg(*args, int);
-    else if (contain_flag(properties, hh))
-        return (long long int)(char)va_arg(*args, int);
-    else
-        return (long long int)va_arg(*args, int);
-}
+
 
 static int      calcul_blank_w(t_proper *properties, long long val)
 {
@@ -86,7 +74,7 @@ int				_p_int(t_proper *properties, va_list *args)
 
     val = 0;
 	total_sz = 0;
-    val = get_value(properties, args);
+    val = get_number_flags(properties, args);
     int_sz = int_size(val);
     if ((contain_flag(properties, space) && !contain_flag(properties, plus)) && val >= 0)
         ft_putchar(' ');
