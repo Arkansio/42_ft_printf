@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/26 03:23:55 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 05:28:23 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -516,6 +516,20 @@ int		main()
 		printf("printf:    %d\n", nb1);
 		printf("ft_printf: %d\n\n", nb2);
 	}
+
+
+	printf("Octale: %o\n", 100);
+	ft_printf("My Octale: %o\n\n", 100);
+
+	printf("Octale: %+10 0.4o\n", 100);
+	ft_printf("My Octale: %+10 .4o\n\n", 100);
+
+	printf("Octale: %ll.10 0 10o\n", 100);
+	ft_printf("My Octale: %ll.4o\n\n", 100);
+
+	printf("Octale: %ll.10 0 10o\n", 100);
+	printf("Octale: %ll 0 10o\n", 100);
+	printf("Octale: %#0+-10.5o\n", 100);
 /*
 
 	printf("o-o-o char test o-o-o\n\n");

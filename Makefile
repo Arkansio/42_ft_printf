@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2018/12/25 23:56:17 by mgessa           ###   ########.fr        #
+#    Updated: 2018/12/28 23:46:17 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRCS = ft_printf.c \
 		padding_char.c \
 		contain_flag.c \
 		_p_int.c \
-		ft_putnbr_long.c
+		ft_putnbr_long.c \
+		_p_octale.c \
+		ft_itoa_base.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
@@ -52,7 +54,8 @@ SRCSL = ft_atoi.c \
 		ft_memset.c \
 		ft_putnbr.c \
 		ft_putchar.c \
-		ft_strcpy.c
+		ft_strcpy.c \
+		ft_strrev.c
 
 FLAGS = -Wall \
 		-Werror \
