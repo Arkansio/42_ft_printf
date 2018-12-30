@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 16:29:25 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 18:17:33 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 18:50:17 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,18 @@ int				_p_octale(t_proper *properties, va_list *args)
 	sz_result = (int)ft_strlen(str);
 	if (properties->precision == -1)
 		properties->precision = 1;
+	if (properties->precision == 0 && val == 0)
+		sz_result--;
 	if (!contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, sz_result, val), contain_flag(properties, zero) ? '0' : ' ');
 	if (properties->precision > sz_result)
         ft_write_multiple(properties->precision - sz_result, '0');
-	ft_putfaststr(str, -1);
+	if (val != 0 || properties->precision != 0)
+		ft_putfaststr(str, -1);
 	if (contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, sz_result, val), ' ');
-	total_sz += calcul_blank_w(properties, sz_result, val) + sz_result + (properties->precision - sz_result);
+	total_sz += calcul_blank_w(properties, sz_result, val) + sz_result;
+	if (properties->precision > sz_result)
+		total_sz += (properties->precision - sz_result);
 	return (total_sz);
 }
