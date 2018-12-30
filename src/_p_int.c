@@ -6,24 +6,12 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 19:00:58 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 21:59:04 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include <limits.h>
-
-static int	int_size(long long int nb)
-{
-    int     i;
-
-    i = 1;
-    while (nb /= 10)
-        i++;
-    return (i);
-}
-
-
 
 static int      calcul_blank_w(t_proper *properties, long long val)
 {
@@ -31,7 +19,7 @@ static int      calcul_blank_w(t_proper *properties, long long val)
 
     if (properties->min_w == -1)
         return (0);
-    sz = int_size(val);
+    sz = ft_ll_size(val);
     if (val == 0 && properties->precision == 0)
         sz--;
     if (properties->precision > sz)
@@ -75,7 +63,7 @@ int				_p_int(t_proper *properties, va_list *args)
     val = 0;
 	total_sz = 0;
     val = get_number_flags(properties, args);
-    int_sz = int_size(val);
+    int_sz = ft_ll_size(val);
     if ((contain_flag(properties, space) && !contain_flag(properties, plus)) && val >= 0)
         ft_putchar(' ');
     if (contain_flag(properties, zero))
