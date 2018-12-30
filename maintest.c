@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 18:54:15 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 22:58:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -343,6 +343,26 @@ int		main()
 	char	t37[] = "Test fail: '%+10{-0.10o'\n";
 	nb1 = printf(t37, 2555, 0);
 	nb2 = ft_printf(t37, 2555, 0);
+	print_result(nb1, nb2);
+
+	char	t38[] = "Test fail: '%#o'\n";
+	nb1 = printf(t38, 2555, 0);
+	nb2 = ft_printf(t38, 2555, 0);
+	print_result(nb1, nb2);
+
+	char	t39[] = "Test fail: '%#.4o'\n";
+	nb1 = printf(t39, 2555, 0);
+	nb2 = ft_printf(t39, 2555, 0);
+	print_result(nb1, nb2);
+
+	char	t40[] = "Test fail: '%#.1o'\n";
+	nb1 = printf(t40, 0, 0);
+	nb2 = ft_printf(t40, 0, 0);
+	print_result(nb1, nb2);
+
+	char	t41[] = "Test fail: '%#.0o'\n";
+	nb1 = printf(t41, 0, 0);
+	nb2 = ft_printf(t41, 0, 0);
 	print_result(nb1, nb2);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
