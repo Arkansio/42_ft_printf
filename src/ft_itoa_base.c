@@ -6,13 +6,13 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 23:38:34 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/29 01:12:03 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 17:03:55 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static char	*ft_get_min(char *dest)
+static char		*ft_get_min(char *dest)
 {
 	int i;
 	char tab[] = "-2147483648";
@@ -26,6 +26,15 @@ static char	*ft_get_min(char *dest)
     return (dest);
 }
 
+static int		ft_zero(char *str, int val)
+{
+	if (val != 0)
+		return (0);
+	str[0] = '0';
+	str[1] = '\0';
+	return (1);
+}
+
 char	*ft_itoa_base(int value, int base)
 {
 	char *val;
@@ -36,6 +45,8 @@ char	*ft_itoa_base(int value, int base)
 	i = 0;
 	if (!(val = malloc(sizeof(char) * 30)))
 		return (NULL);
+	if (ft_zero(val, value))
+		return (val);
     if (base < 2 || base > 16)
 	{
 		val[0] = '\0';

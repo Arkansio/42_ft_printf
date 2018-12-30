@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 14:03:39 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/30 16:41:46 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -518,11 +518,29 @@ int		main()
 	}
 
 
-	printf("Octale: %o\n", 100);
-	ft_printf("My Octale: %o\n\n", 100);
+	char	t32[] = "'%o'\n";
+	nb1 = printf(t32, 0, 0);
+	nb2 = ft_printf(t32, 0, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
-	printf("Octale: %+10 0.4o\n", 100);
-	ft_printf("My Octale: %+10 .4o\n\n", 100);
+	char	t33[] = "'%+10 .4o'\n";
+	nb1 = printf(t33, 0, 0);
+	nb2 = ft_printf(t33, 0, 0);
+	if (nb1 == nb2)
+		printf("%s", SUCCESS);
+	else
+	{
+		printf("%s", FAILURE);
+		printf("printf:    %d\n", nb1);
+		printf("ft_printf: %d\n\n", nb2);
+	}
 
 	printf("Octale: %ll.10 0 10o\n", 100);
 	ft_printf("My Octale: %ll.4o\n\n", 100);
