@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 23:43:33 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/31 00:09:25 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,6 +369,16 @@ int		main()
 	char	t42[] = "Test fail: '%#o'\n";
 	nb1 = printf(t42, 5, 0);
 	nb2 = ft_printf(t42, 5, 0);
+	print_result(nb1, nb2);
+
+	char	t43[] = "Test fail: '%10.4#o'\n";
+	nb1 = printf(t43, 50000, 0);
+	nb2 = ft_printf(t43, 50000, 0);
+	print_result(nb1, nb2);
+
+		char	t44[] = "Test fail: '%4.8ll#o'\n";
+	nb1 = printf(t44, 50000, 0);
+	nb2 = ft_printf(t44, 50000, 0);
 	print_result(nb1, nb2);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
