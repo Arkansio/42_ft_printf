@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/31 00:09:25 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/31 18:22:54 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -297,6 +297,11 @@ int		main()
 	nb2 = ft_printf(t29, 0);
 	print_result(nb1, nb2);
 
+
+	char	td[] = "%#d\n";
+	nb1 = printf(td, 10);
+	nb2 = ft_printf(td, 10);
+	print_result(nb1, nb2);
 	//
 
 
@@ -376,7 +381,7 @@ int		main()
 	nb2 = ft_printf(t43, 50000, 0);
 	print_result(nb1, nb2);
 
-		char	t44[] = "Test fail: '%4.8ll#o'\n";
+		char	t44[] = "Test fail: '%4.8ll#0o'\n";
 	nb1 = printf(t44, 50000, 0);
 	nb2 = ft_printf(t44, 50000, 0);
 	print_result(nb1, nb2);

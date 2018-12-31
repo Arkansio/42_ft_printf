@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 16:29:25 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 23:01:20 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/31 22:02:02 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ static int      calcul_blank_w(t_proper *properties, int str_sz, long long val)
 int				_p_octale(t_proper *properties, va_list *args)
 {
 	char	*str;
-	int		val;
+	unsigned int val;
 	int		sz_result;
 	int		total_sz;
 
 	total_sz = 0;
-	val = va_arg(*args, int);
+	val = va_arg(*args, unsigned int);
 	str = ft_itoa_base(val, 8);
 	sz_result = (int)ft_strlen(str);
 	if (properties->precision == -1)
