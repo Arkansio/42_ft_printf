@@ -6,13 +6,13 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/30 18:59:24 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 18:59:32 by mgessa           ###   ########.fr       */
+/*   Updated: 2018/12/31 22:51:54 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-long long int get_number_flags(t_proper *properties, va_list *args)
+long long int get_int_flags(t_proper *properties, va_list *args)
 {
     if (contain_flag(properties, ll))
         return va_arg(*args, long long int);
