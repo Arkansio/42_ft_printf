@@ -6,12 +6,14 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/01 21:56:08 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/01 22:35:38 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include "unistd.h"
+#include <limits.h>
+
 
 #define SUCCESS "\x1b[32m  ▒ ▒ ▒ Success! ▒ ▒ ▒ \x1b[0m\n\n"
 
@@ -29,10 +31,46 @@ static void		print_result(int nb1, int nb2)
 	}
 }
 
+static void		ft_print_limit()
+{
+	    printf("CHAR_BIT   = %d\n", CHAR_BIT);
+    printf("MB_LEN_MAX = %d\n", MB_LEN_MAX);
+    printf("\n");
+ 
+    printf("CHAR_MIN   = %+d\n", CHAR_MIN);
+    printf("CHAR_MAX   = %+d\n", CHAR_MAX);
+    printf("SCHAR_MIN  = %+d\n", SCHAR_MIN);
+    printf("SCHAR_MAX  = %+d\n", SCHAR_MAX);
+    printf("UCHAR_MAX  = %u\n",  UCHAR_MAX);
+    printf("\n");
+ 
+    printf("SHRT_MIN   = %+d\n", SHRT_MIN);
+    printf("SHRT_MAX   = %+d\n", SHRT_MAX);
+    printf("USHRT_MAX  = %u\n",  USHRT_MAX);
+    printf("\n");
+ 
+    printf("INT_MIN    = %+d\n", INT_MIN);
+    printf("INT_MAX    = %+d\n", INT_MAX);
+    printf("UINT_MAX   = %u\n",  UINT_MAX);
+    printf("\n");
+ 
+    printf("LONG_MIN   = %+ld\n", LONG_MIN);
+    printf("LONG_MAX   = %+ld\n", LONG_MAX);
+    printf("ULONG_MAX  = %lu\n",  ULONG_MAX);
+    printf("\n");
+ 
+    printf("LLONG_MIN  = %+lld\n", LLONG_MIN);
+    printf("LLONG_MAX  = %+lld\n", LLONG_MAX);
+    printf("ULLONG_MAX = %llu\n",  ULLONG_MAX);
+    printf("\n");
+}
+
 int		main()
 {
 	int nb1;
 	int nb2;
+
+	ft_print_limit();
 /*	printf("%20.8d\n", 25);
 	printf("%20.8d\n", 252);
 	printf("%20.8d\n", 2511);
@@ -398,8 +436,8 @@ int		main()
 
 
 		char	t46[] = "Test big: %+llo\n";
-	nb1 = printf(t46, 8745646545245);
-	nb2 = ft_printf(t46, 8745646545245);
+	nb1 = printf(t46, 9223372036854775807);
+	nb2 = ft_printf(t46, 9223372036854775807);
 	print_result(nb1, nb2);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
