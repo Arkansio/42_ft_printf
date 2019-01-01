@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/30 21:59:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/01 03:13:48 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int				_p_int(t_proper *properties, va_list *args)
 
     val = 0;
 	total_sz = 0;
-    val = get_number_flags(properties, args);
+    val = get_int_flags(properties, args);
     int_sz = ft_ll_size(val);
     if ((contain_flag(properties, space) && !contain_flag(properties, plus)) && val >= 0)
         ft_putchar(' ');
