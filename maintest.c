@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/01 23:33:45 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/02 01:35:00 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -444,6 +444,38 @@ int		main()
 		char	t47[] = "Test big: %+o\n";
 	nb1 = printf(t47, 4294967295);
 	nb2 = ft_printf(t47, 4294967295);
+	print_result(nb1, nb2);
+
+	char	t48[] = "Test big: %+u\n";
+	nb1 = printf(t48, 4294967295);
+	nb2 = ft_printf(t48, 4294967295);
+	print_result(nb1, nb2);
+
+
+		char	t49[] = "Test big: %#u\n";
+	nb1 = printf(t49, 4294967295);
+	nb2 = ft_printf(t49, 4294967295);
+	print_result(nb1, nb2);
+
+			char	t50[] = "Test big: % u\n";
+	nb1 = printf(t50, 4294967295);
+	nb2 = ft_printf(t50, 4294967295);
+	print_result(nb1, nb2);
+
+
+				char	t51[] = "Test big: % #u\n";
+	nb1 = printf(t51, 0);
+	nb2 = ft_printf(t51, 0);
+	print_result(nb1, nb2);
+
+					char	t51[] = "Test big: % #u\n";
+	nb1 = printf(t51, 0);
+	nb2 = ft_printf(t51, 0);
+	print_result(nb1, nb2);
+
+	char	t52[] = "Test big: % .#u\n";
+	nb1 = printf(t52, 0);
+	nb2 = ft_printf(t52, 0);
 	print_result(nb1, nb2);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
