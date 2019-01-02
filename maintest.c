@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/02 01:35:00 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/02 21:42:39 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -468,14 +468,19 @@ int		main()
 	nb2 = ft_printf(t51, 0);
 	print_result(nb1, nb2);
 
-					char	t51[] = "Test big: % #u\n";
-	nb1 = printf(t51, 0);
-	nb2 = ft_printf(t51, 0);
-	print_result(nb1, nb2);
-
-	char	t52[] = "Test big: % .#u\n";
+					char	t52[] = "Test big: % #u\n";
 	nb1 = printf(t52, 0);
 	nb2 = ft_printf(t52, 0);
+	print_result(nb1, nb2);
+
+	char	t53[] = "Test big: % .#u\n";
+	nb1 = printf(t53, 0);
+	nb2 = ft_printf(t53, 0);
+	print_result(nb1, nb2);
+
+	char	t54[] = "%o, %ho, %hho\n";
+	nb1 = printf(t54, -42, -42, -42);
+	nb2 = ft_printf(t54, -42, -42, -42);
 	print_result(nb1, nb2);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
