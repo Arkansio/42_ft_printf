@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 03:20:24 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 05:28:05 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 05:44:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int      calcul_blank_w(t_proper *properties, int str_sz, long long val)
 
 static void     print_all(t_proper *properties, char *str, long long val, int sz_result)
 {
-	if (contain_flag(properties, diez) && ((properties->precision <= sz_result && val != 0) && !(properties->precision == 0 && val == 0)))
-		ft_putfaststr("0X", -1);
 	if (!contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, sz_result, val), contain_flag(properties, zero) ? '0' : ' ');
+	if (contain_flag(properties, diez) && ((properties->precision <= sz_result && val != 0) && !(properties->precision == 0 && val == 0)))
+		ft_putfaststr("0X", -1);
 	if (properties->precision > sz_result)
         ft_write_multiple(properties->precision - sz_result, '0');
 	if (val != 0 || properties->precision != 0)
