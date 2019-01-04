@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/03 19:25:11 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 05:23:57 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -497,6 +497,28 @@ int		main()
 		char	t57[] = "%#x, %#hx, %#hhx\n";
 	nb1 = printf(t57, 42, 42, 42);
 	nb2 = ft_printf(t57, 42, 42, 42);
+	print_result(nb1, nb2);
+
+
+	char		t58[] = "@moulitest: %#.x %#.0x\n";
+	nb1 = printf(t58, 0, 0);
+	nb2= ft_printf(t58, 0, 0);
+	print_result(nb1, nb2);
+
+
+		char		t59[] = "%#08x\n";
+	nb1 = printf(t59, 42);
+	nb2= ft_printf(t59, 42);
+	print_result(nb1, nb2);
+
+	char		t60[] = "%#X\n";
+	nb1 = printf(t60, 42);
+	nb2= ft_printf(t60, 42);
+	print_result(nb1, nb2);
+
+		char		t61[] = "@moulitest: %#.o %#.0o\n";
+	nb1 = printf(t61, 0, 0);
+	nb2= ft_printf(t61, 0, 0);
 	print_result(nb1, nb2);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
