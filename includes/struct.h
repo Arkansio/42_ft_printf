@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/03 19:22:32 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 03:19:24 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int				_p_modulo(t_proper *properties, va_list *args);
 int				_p_string(t_proper *properties, va_list *args);
 int				_p_float(t_proper *properties, va_list *args);
 int				_p_uint(t_proper *properties, va_list *args);
-int				_p_hex_m(t_proper *properties, va_list *args);
+int				_p_hex_l(t_proper *properties, va_list *args);
 int				pass_min_width(const char *str, int max);
 int				pass_precision(const char *str, int max);
 int 			get_min_width(const char *str, int max);

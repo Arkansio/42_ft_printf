@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2019/01/03 19:22:43 by mgessa           ###   ########.fr        #
+#    Updated: 2019/01/04 03:19:37 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SRCS = ft_printf.c \
 		ft_ll_size.c \
 		get_uint_flags.c \
 		_p_uint.c \
-		_p_hex_m.c
+		_p_hex_l.c \
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \
