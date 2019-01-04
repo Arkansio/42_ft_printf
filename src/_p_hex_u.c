@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_hex_l.c                                         :+:      :+:    :+:   */
+/*   _p_hex_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/03 19:21:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 03:21:34 by mgessa           ###   ########.fr       */
+/*   Created: 2019/01/04 03:20:24 by mgessa            #+#    #+#             */
+/*   Updated: 2019/01/04 03:21:13 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void     print_all(t_proper *properties, char *str, long long val, int sz
 		ft_write_multiple(calcul_blank_w(properties, sz_result, val), ' ');
 }
 
-int				_p_hex_l(t_proper *properties, va_list *args)
+int				_p_hex_u(t_proper *properties, va_list *args)
 {
 	char		*str;
 	long long	val;
@@ -52,7 +52,7 @@ int				_p_hex_l(t_proper *properties, va_list *args)
 
 	total_sz = 0;
 	val = get_uint_flags(properties, args);
-	str = ft_itoa_base(val, 16, 'a');
+	str = ft_itoa_base(val, 16, 'A');
 	sz_result = (int)ft_strlen(str);
 	if (properties->precision == -1)
 		properties->precision = 1;

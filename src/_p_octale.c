@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 16:29:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/01 21:50:54 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 03:22:08 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int				_p_octale(t_proper *properties, va_list *args)
 
 	total_sz = 0;
 	val = get_uint_flags(properties, args);
-	str = ft_itoa_base(val, 8);
+	str = ft_itoa_base(val, 8, 0);
 	sz_result = (int)ft_strlen(str);
 	if (properties->precision == -1)
 		properties->precision = 1;

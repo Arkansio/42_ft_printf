@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 23:38:34 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/01 21:53:03 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 03:21:04 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int		ft_zero(char *str, long long val)
 	return (1);
 }
 
-char	*ft_itoa_base(long long value, int base)
+char	*ft_itoa_base(long long value, int base, char starting)
 {
 	char *val;
 	int i;
@@ -34,7 +34,7 @@ char	*ft_itoa_base(long long value, int base)
 	while (value != 0)
 	{
 		if (value % base >= 10)
-			val[i++] = 'A' + (value % base) % 10;
+			val[i++] = starting + (value % base) % 10;
 		else
 			val[i++] = '0' + value % base;
 		value /= base;

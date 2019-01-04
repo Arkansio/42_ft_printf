@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 03:19:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 03:22:33 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void			ft_write_multiple(int sz, char c);
 void        	ft_putfaststr(const char *str, int max);
 void        	print_first_padding(t_proper *properties, int *chain_z);
 void        	print_end_padding(t_proper *properties, int *chain_z);
-char			*ft_itoa_base(long long value, int base);
+char			*ft_itoa_base(long long value, int base, char starting);
 long long int 	get_uint_flags(t_proper *properties, va_list *args);
 long long int	get_int_flags(t_proper *properties, va_list *args);
 int				_p_octale(t_proper *properties, va_list *args);
@@ -73,6 +73,7 @@ int				_p_string(t_proper *properties, va_list *args);
 int				_p_float(t_proper *properties, va_list *args);
 int				_p_uint(t_proper *properties, va_list *args);
 int				_p_hex_l(t_proper *properties, va_list *args);
+int				_p_hex_u(t_proper *properties, va_list *args);
 int				pass_min_width(const char *str, int max);
 int				pass_precision(const char *str, int max);
 int 			get_min_width(const char *str, int max);
