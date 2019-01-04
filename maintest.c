@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 05:55:58 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 21:16:24 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -534,6 +534,17 @@ int		main()
 	char		t64[] = "%#08x\n";
 	nb1 = printf(t64, 42);
 	nb2= ft_printf(t64, 42);
+	print_result(nb1, nb2);
+
+		char		t65[] = "%lu\n";
+	nb1 = printf(t65, -42);
+	nb2= ft_printf(t65, -42);
+	print_result(nb1, nb2);
+
+
+	char		t66[] = "%p %p\n";
+	nb1 = printf(t66, t65, t66);
+	nb2 = ft_printf(t66, t65, t66);
 	print_result(nb1, nb2);
 
 //	printf("Octale   : %ll.10 0 10o\n", 100);
