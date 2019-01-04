@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 19:21:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 02:39:18 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/04 03:13:28 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ static int      calcul_blank_w(t_proper *properties, int str_sz, long long val)
     return (0);
 }
 
+static void     print_all(t_proper *properties, char *str, long long val, int sz_result)
+{
+	if (!contain_flag(properties, minus))
+		ft_write_multiple(calcul_blank_w(properties, sz_result, val), contain_flag(properties, zero) ? '0' : ' ');
+	if (properties->precision > sz_result)
+        ft_write_multiple(properties->precision - sz_result, '0');
+	if (contain_flag(properties, diez) && ((properties->precision <= sz_result && val != 0) || (properties->precision == 0 && val == 0)))
+		ft_putfaststr("0x", -1);
+	if (val != 0 || properties->precision != 0)
+		ft_putfaststr(str, -1);
+	if (contain_flag(properties, minus))
+		ft_write_multiple(calcul_blank_w(properties, sz_result, val), ' ');
+}
+
 int				_p_hex_m(t_proper *properties, va_list *args)
 {
 	char		*str;
@@ -46,16 +60,7 @@ int				_p_hex_m(t_proper *properties, va_list *args)
 		sz_result--;
 	if (contain_flag(properties, diez) && ((properties->precision <= sz_result && val != 0) || (properties->precision == 0 && val == 0)))
 		sz_result += 2;
-	if (!contain_flag(properties, minus))
-		ft_write_multiple(calcul_blank_w(properties, sz_result, val), contain_flag(properties, zero) ? '0' : ' ');
-	if (properties->precision > sz_result)
-        ft_write_multiple(properties->precision - sz_result, '0');
-	if (contain_flag(properties, diez) && ((properties->precision <= sz_result && val != 0) || (properties->precision == 0 && val == 0)))
-		ft_putfaststr("0x", -1);
-	if (val != 0 || properties->precision != 0)
-		ft_putfaststr(str, -1);
-	if (contain_flag(properties, minus))
-		ft_write_multiple(calcul_blank_w(properties, sz_result, val), ' ');
+    print_all(properties, str, val, sz_result);
 	total_sz += calcul_blank_w(properties, sz_result, val) + sz_result;
 	if (properties->precision > sz_result)
 		total_sz += (properties->precision - sz_result);
