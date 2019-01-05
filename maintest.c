@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 21:16:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 00:02:53 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -547,6 +547,37 @@ int		main()
 	nb2 = ft_printf(t66, t65, t66);
 	print_result(nb1, nb2);
 
+	char		t67[] = "%.2p %.20p\n";
+	nb1 = printf(t67, t65, t66);
+	nb2 = ft_printf(t67, t65, t66);
+	print_result(nb1, nb2);
+
+	char		t68[] = "%15.p %025.p\n";
+	nb1 = printf(t68, t65, t66);
+	nb2 = ft_printf(t68, t65, t66);
+	print_result(nb1, nb2);
+
+	char		t69[] = "%20.10p %025.20p\n";
+	nb1 = printf(t69, t65, t66);
+	nb2 = ft_printf(t69, t65, t66);
+	print_result(nb1, nb2);
+
+	char		t70[] = "%20.13p %025.14p\n";
+	nb1 = printf(t70, t65, t66);
+	nb2 = ft_printf(t70, t65, t66);
+	print_result(nb1, nb2);
+
+	char		t71[] = "'%lu', '%lu'\n";
+	nb1 = printf(t71, 0, ULONG_MAX);
+	nb2 = ft_printf(t71, 0, ULONG_MAX);
+	print_result(nb1, nb2);
+
+	char		t72[] = "%.0p, %.p\n";
+	nb1 = printf(t72, 0, 0);
+	nb2 = ft_printf(t72, 0, 0);
+	print_result(nb1, nb2);
+
+ft_printf("%lu", -42);
 //	printf("Octale   : %ll.10 0 10o\n", 100);
 //	ft_printf("My Octale: %ll.10 0 10o\n", 100);
 
