@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 05:19:47 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 20:36:17 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -592,70 +592,14 @@ int		main()
 	nb2 = ft_printf(t75, 0, 0);
 	print_result(nb1, nb2);
 
-ft_printf("%lu", -42);
-//	printf("Octale   : %ll.10 0 10o\n", 100);
-//	ft_printf("My Octale: %ll.10 0 10o\n", 100);
+	char		t76[] = "Complex test: %lu %.lu %ll20-un %llu %ll20.u %.10 010-u %.3 3u\n";
+	nb1 = printf(t76, 0, 0, 0, LONG_MIN, LLONG_MAX, 42, 0);
+	nb2 = ft_printf(t76, 0, 0, 0, LONG_MIN, LLONG_MAX, 42, 0);
+	print_result(nb1, nb2);
 
-//	printf("Octale: %ll 0 10o\n", 100);
-//	printf("Octale: %#0+- 10.5o\n", 100);
-/*
-
-	printf("o-o-o char test o-o-o\n\n");
-
-	printf("Result :%10.-3hhd Hello\n", 250);
-	ft_printf("Result :%10.-3hhd Hello\n\n", 250);
-
-	printf("Result :%10.-3hhd Hello\n", 'a');
-	ft_printf("Result :%10.-3hhd Hello\n\n", 'a');
-
-	printf("Result :%10.-3hhd Hello\n", 1000);
-	ft_printf("Result :%10.-3hhd Hello\n\n", 1000);
-
-	printf("Result :%10.-3hhd Hello\n", 0);
-	ft_printf("Result :%10.-3hhd Hello\n\n", 0);
-
-	printf("o-o-o short int test o-o-o\n\n");
-
-	printf("Result :%10.-3hd Hello\n", 1000);
-	ft_printf("Result :%10.-3hd Hello\n\n", 1000);
-
-	printf("Result :%10.-3hd Hello\n", 123456789);
-	ft_printf("Result :%10.-3hd Hello\n\n", 123456789);
-
-	printf("Result :%10.-3hd Hello\n", -123456789);
-	ft_printf("Result :%10.-3hd Hello\n\n", -123456789);
-
-	printf("Result :%10.-3hd Hello\n", 0);
-	ft_printf("Result :%10.-3hd Hello\n\n", 0);
-
-	printf("Result :%10.-3hd Hello\n", 1);
-	ft_printf("Result :%10.-3hd Hello\n\n", 1);
-
-	printf("o-o-o long int test o-o-o\n\n");
-
-	printf("Result :%10.-3ld Hello\n", 1000);
-	ft_printf("Result :%10.-3ld Hello\n\n", 1000);
-
-	printf("Result :%10.-3ld Hello\n", 123456789123);
-	ft_printf("Result :%10.-3ld Hello\n\n", 123456789123);
-
-	printf("Result :%10.-3ld Hello\n", 12345678912345678912);
-	ft_printf("Result :%10.-3ld Hello\n\n", 12345678912345678912);
-
-	printf("o-o-o long long int test o-o-o\n\n");
-
-	printf("Result :%10.-3lld Hello\n", 12345678912345678);
-	ft_printf("Result :%10.-3lld Hello\n\n", 12345678912345678);
-
-
-	printf("Result :%10.-3lld Hello\n", -9223372036854775808);
-	ft_printf("Result :%10.-3lld Hello\n\n", -9223372036854775808);
-
-	printf("Result :%10.-3lld Hello\n", 9223372036854775807);
-	ft_printf("Result :%10.-3lld Hello\n\n", 9223372036854775807);
-
-	printf("Result :%10.-3d Hello\n", 9223372036854775807);
-	ft_printf("Result :%10.-3d Hello\n\n", 9223372036854775807);  */
-
-//	printf("Result :%10 .5f\n", 25);
+	char		t77[] = "Pointer: %p %.0p %.40p %10 0-p %-50p %.1p %15 0p\n";
+	nb1 = printf(t77, 0, 0, 0, t77, t75, 0, t1);
+	nb2 = ft_printf(t77, 0, 0, 0, t77, t75, 0, t1);
+	print_result(nb1, nb2);
+	
 }
