@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 05:11:05 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 00:23:36 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 20:50:10 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ static int      calcul_blank_w(t_proper *properties, int str_sz)
 
 static void     print_all(t_proper *properties, char *str, int sz_result)
 {
-	if (!contain_flag(properties, minus))
+	if (!contain_flag(properties, minus) && !contain_flag(properties, zero))
 		ft_write_multiple(calcul_blank_w(properties, sz_result), ' ');
 	ft_putfaststr("0x", -1);
+	if (!contain_flag(properties, minus) && contain_flag(properties, zero))
+		ft_write_multiple(calcul_blank_w(properties, sz_result), '0');
 	if (properties->precision > (sz_result - 2))
         ft_write_multiple(properties->precision - (sz_result - 2), '0');
 	if (!(properties->precision == 0 && str[0] == '0'))
