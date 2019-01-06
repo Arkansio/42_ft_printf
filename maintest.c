@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 20:40:49 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/07 00:20:40 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -602,4 +602,29 @@ int		main()
 	nb2 = ft_printf(t77, 0, 0, 0, t77, t75, 0, t1);
 	print_result(nb1, nb2);
 	
+	char		t78[] = "String: %s %.0s %.40s %10 0-s %-50s %.1s %15 0s\n";
+	nb1 = printf(t78, NULL, NULL, "salut!", "grrrr!", "a", "moe");
+	nb2 = ft_printf(t78, NULL, NULL, "salut!", "grrrr!", "a", "moe");
+	print_result(nb1, nb2);
+
+	char		t79[] = "Int: %d %.0i %.40i %10 0-i %-50d %.1i %15 0i\n";
+	nb1 = printf(t79, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX);
+	nb2 = ft_printf(t79, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX, INT_MAX);
+	print_result(nb1, nb2);
+
+	char		t80[] = "Int_min: %d %.0i %.40i %10 0-i %-50d %.1i %15 0i\n";
+	nb1 = printf(t80, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
+	nb2 = ft_printf(t80, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
+	print_result(nb1, nb2);
+
+	char		t81[] = "Llong_min: %lld %.0lli %.40lli %10 0-lli %-50lld %.1lli %15 0lli\n";
+	nb1 = printf(t81, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	nb2 = ft_printf(t81, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	print_result(nb1, nb2);
+
+	char		t82[] = "Llong_min: %llu %.0llu %.40llu %10 0-llu %-50llu %.1llu %15 0llu\n";
+	nb1 = printf(t82, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	nb2 = ft_printf(t82, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	print_result(nb1, nb2);
+
 }
