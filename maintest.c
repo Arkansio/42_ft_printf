@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 02:17:13 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 05:19:47 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -585,6 +585,11 @@ int		main()
 	char		t74[] = "%s %.s\n";
 	nb1 = printf(t74, NULL, NULL);
 	nb2 = ft_printf(t74, NULL, NULL);
+	print_result(nb1, nb2);
+
+	char		t75[] = "%.0p, %.10p\n";
+	nb1 = printf(t75, 0, 0);
+	nb2 = ft_printf(t75, 0, 0);
 	print_result(nb1, nb2);
 
 ft_printf("%lu", -42);
