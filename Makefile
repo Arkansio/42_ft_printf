@@ -6,7 +6,7 @@
 #    By: mgessa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2019/01/04 22:58:30 by mgessa           ###   ########.fr        #
+#    Updated: 2019/01/06 02:01:26 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,9 @@ SRCS = ft_printf.c \
 		_p_uint.c \
 		_p_hex_l.c \
 		_p_hex_u.c \
-		_p_pointer.c
+		_p_pointer.c \
+		ft_putnbr_ullong.c \
+		ft_ull_size.c
 
 SRCSL = ft_atoi.c \
 		ft_isdigit.c \

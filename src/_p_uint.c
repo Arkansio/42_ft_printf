@@ -6,13 +6,13 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 00:47:53 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/02 01:22:18 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 02:01:35 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static int      calcul_blank_w(t_proper *properties, long long val)
+static int      calcul_blank_w(t_proper *properties, unsigned long long val)
 {
     int     sz;
 
@@ -30,7 +30,7 @@ static int      calcul_blank_w(t_proper *properties, long long val)
     return (0);
 }
 
-static int     print_prefix(t_proper *properties, long long val)
+static int     print_prefix(t_proper *properties, unsigned long long val)
 {
     if (properties->precision == -1)
         properties->precision = 1;
@@ -51,14 +51,14 @@ static char      can_set_zero(t_proper *properties, int int_sz)
 
 int				_p_uint(t_proper *properties, va_list *args)
 {
-    long long int	val;
-	int				total_sz;
-    int             int_sz;
+    unsigned long long int  val;
+	int				        total_sz;
+    int                     int_sz;
 
     val = 0;
 	total_sz = 0;
     val = get_uint_flags(properties, args);
-    int_sz = ft_ll_size(val);
+    int_sz = ft_ull_size(val);
     if (contain_flag(properties, zero))
         total_sz += print_prefix(properties, val);
     if (!contain_flag(properties, minus))
@@ -70,7 +70,7 @@ int				_p_uint(t_proper *properties, va_list *args)
     if (properties->precision > int_sz)
         ft_write_multiple(properties->precision - int_sz, '0');
     if (!(val == 0 && properties->precision == 0))
-        ft_putnbr_long(val);
+        ft_putnbr_ullong(val);
     else
         int_sz--;
     if (contain_flag(properties, minus))

@@ -6,13 +6,13 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 23:38:34 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 03:21:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 01:15:27 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static int		ft_zero(char *str, long long val)
+static int		ft_zero(char *str, unsigned long long val)
 {
 	if (val != 0)
 		return (0);
@@ -21,7 +21,7 @@ static int		ft_zero(char *str, long long val)
 	return (1);
 }
 
-char	*ft_itoa_base(long long value, int base, char starting)
+char	*ft_itoa_base(unsigned long long value, int base, char starting)
 {
 	char *val;
 	int i;

@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 22:56:15 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/06 02:01:13 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,38 +55,40 @@ typedef struct	s_flags // flags list in order of priority
 }				t_flags;
 
 
-void			ft_putnbr_long(long long n);
-int				contain_flag(t_proper *props, enum e_flags flag);
-int				ft_ll_size(long long int nb);
-void			ft_write_multiple(int sz, char c);
-void        	ft_putfaststr(const char *str, int max);
-void        	print_first_padding(t_proper *properties, int *chain_z);
-void        	print_end_padding(t_proper *properties, int *chain_z);
-char			*ft_itoa_base(long long value, int base, char starting);
-long long int 	get_uint_flags(t_proper *properties, va_list *args);
-long long int	get_int_flags(t_proper *properties, va_list *args);
-int				_p_octale(t_proper *properties, va_list *args);
-int				_p_int(t_proper *properties, va_list *args);
-int				_p_char(t_proper *properties, va_list *args);
-int				_p_modulo(t_proper *properties, va_list *args);
-int				_p_string(t_proper *properties, va_list *args);
-int				_p_float(t_proper *properties, va_list *args);
-int				_p_uint(t_proper *properties, va_list *args);
-int				_p_hex_l(t_proper *properties, va_list *args);
-int				_p_hex_u(t_proper *properties, va_list *args);
-int				_p_pointer(t_proper *properties, va_list *args);
-int				pass_min_width(const char *str, int max);
-int				pass_precision(const char *str, int max);
-int 			get_min_width(const char *str, int max);
-int				get_precision(const char *str, int max);
-int				get_typefunc(const char c);
-void			ft_lstaddend(t_list **alst, t_list *newlst);
-int				get_flag(const char *c, enum e_flags *flag);
-void			ft_parse_flags(t_list **lst, const char *str, int max);
-void			ft_parse_properties(t_proper *proper, const char *str, int max);
-int				ft_convert(const char *str, int max, va_list *args);
-void			ft_strlst_read(t_list **alst);
-int				ft_validconv(const char *format);
-int				ft_parse_rd(const char *format, va_list *args);
+void				ft_putnbr_long(long long n);
+void				ft_putnbr_ullong(unsigned long long n);
+int					contain_flag(t_proper *props, enum e_flags flag);
+int					ft_ll_size(long long int nb);
+int					ft_ull_size(unsigned long long nb);
+void				ft_write_multiple(int sz, char c);
+void        		ft_putfaststr(const char *str, int max);
+void        		print_first_padding(t_proper *properties, int *chain_z);
+void        		print_end_padding(t_proper *properties, int *chain_z);
+char				*ft_itoa_base(unsigned long long value, int base, char starting);
+long long int		get_int_flags(t_proper *properties, va_list *args);
+unsigned long long	get_uint_flags(t_proper *properties, va_list *args);
+int					_p_octale(t_proper *properties, va_list *args);
+int					_p_int(t_proper *properties, va_list *args);
+int					_p_char(t_proper *properties, va_list *args);
+int					_p_modulo(t_proper *properties, va_list *args);
+int					_p_string(t_proper *properties, va_list *args);
+int					_p_float(t_proper *properties, va_list *args);
+int					_p_uint(t_proper *properties, va_list *args);
+int					_p_hex_l(t_proper *properties, va_list *args);
+int					_p_hex_u(t_proper *properties, va_list *args);
+int					_p_pointer(t_proper *properties, va_list *args);
+int					pass_min_width(const char *str, int max);
+int					pass_precision(const char *str, int max);
+int 				get_min_width(const char *str, int max);
+int					get_precision(const char *str, int max);
+int					get_typefunc(const char c);
+void				ft_lstaddend(t_list **alst, t_list *newlst);
+int					get_flag(const char *c, enum e_flags *flag);
+void				ft_parse_flags(t_list **lst, const char *str, int max);
+void				ft_parse_properties(t_proper *proper, const char *str, int max);
+int					ft_convert(const char *str, int max, va_list *args);
+void				ft_strlst_read(t_list **alst);
+int					ft_validconv(const char *format);
+int					ft_parse_rd(const char *format, va_list *args);
 
 #endif
