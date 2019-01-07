@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maintest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/07 00:20:40 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 00:21:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -557,12 +557,12 @@ int		main()
 	nb2 = ft_printf(t68, t65, t66);
 	print_result(nb1, nb2);
 
-	char		t69[] = "%20.10p %025.20p\n";
+	char		t69[] = "t69 %20.10p %025.20p\n";
 	nb1 = printf(t69, t65, t66);
 	nb2 = ft_printf(t69, t65, t66);
 	print_result(nb1, nb2);
 
-	char		t70[] = "%20.13p %025.14p\n";
+	char		t70[] = "t70 %20.13p %025.14p\n";
 	nb1 = printf(t70, t65, t66);
 	nb2 = ft_printf(t70, t65, t66);
 	print_result(nb1, nb2);
@@ -572,7 +572,7 @@ int		main()
 	nb2 = ft_printf(t71, 0, ULONG_MAX);
 	print_result(nb1, nb2);
 
-	char		t72[] = "%.0p, %.p\n";
+	char		t72[] = "t72 %.0p, %.p\n";
 	nb1 = printf(t72, 0, 0);
 	nb2 = ft_printf(t72, 0, 0);
 	print_result(nb1, nb2);
@@ -587,7 +587,7 @@ int		main()
 	nb2 = ft_printf(t74, NULL, NULL);
 	print_result(nb1, nb2);
 
-	char		t75[] = "%.0p, %.10p\n";
+	char		t75[] = "t75 %.0p, %.10p\n";
 	nb1 = printf(t75, 0, 0);
 	nb2 = ft_printf(t75, 0, 0);
 	print_result(nb1, nb2);
