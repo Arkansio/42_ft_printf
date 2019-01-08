@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _p_hex_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 03:20:24 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 05:57:17 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 02:21:34 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int				_p_hex_u(t_proper *properties, va_list *args)
 	int			total_sz;
 
 	total_sz = 0;
+	can_ignore_zero(properties);
 	val = get_uint_flags(properties, args);
 	str = ft_itoa_base(val, 16, 'A');
 	sz_result = (int)ft_strlen(str);

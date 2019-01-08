@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 00:47:53 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/07 23:33:49 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 02:22:06 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int				_p_uint(t_proper *properties, va_list *args)
 
     val = 0;
 	total_sz = 0;
+    can_ignore_zero(properties);
     val = get_uint_flags(properties, args);
     int_sz = ft_ull_size(val);
     if (contain_flag(properties, zero))

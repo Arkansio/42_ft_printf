@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   _p_int.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/01 03:13:48 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 02:21:47 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int				_p_int(t_proper *properties, va_list *args)
 
     val = 0;
 	total_sz = 0;
+    can_ignore_zero(properties);
     val = get_int_flags(properties, args);
     int_sz = ft_ll_size(val);
     if ((contain_flag(properties, space) && !contain_flag(properties, plus)) && val >= 0)

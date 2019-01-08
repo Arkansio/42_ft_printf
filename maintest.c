@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/08 01:39:10 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 02:22:51 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -630,6 +630,11 @@ int		main()
 	char		t83[] = "t83: Pointer: % p %. p %15.1 0p %16 0p %20h0p %025.14p\n";
 	nb1 = printf(t83, t83, t83, t83, t83, t83, t83);
 	nb2 = ft_printf(t83, t83, t83, t83, t83, t83, t83);
+	print_result(nb1, nb2);
+
+	char		t84[] = "t84: Pointer: %0 10.2d %0 15.2x %0 15.2X %0 15.2u %0 15.2o\n";
+	nb1 = printf(t84, 50, 50, 50, 50, 50);
+	nb2 = ft_printf(t84, 50, 50, 50, 50, 50);
 	print_result(nb1, nb2);
 
 }

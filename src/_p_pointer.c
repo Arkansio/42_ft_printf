@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 05:11:05 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/08 01:42:51 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 02:23:40 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static int      calcul_blank_w(t_proper *properties, int str_sz)
 
 static void     print_all(t_proper *properties, char *str, int sz_result)
 {
-	if (!contain_flag(properties, minus) && (!contain_flag(properties, zero) || properties->precision != -1))
+	if (!contain_flag(properties, minus) && (!contain_flag(properties, zero)))
 		ft_write_multiple(calcul_blank_w(properties, sz_result), ' ');
 	ft_putfaststr("0x", -1);
-	if (contain_flag(properties, zero) && properties->precision == -1)
+	if (contain_flag(properties, zero))
 		ft_write_multiple(calcul_blank_w(properties, sz_result), '0');
 	if (properties->precision > (sz_result - 2))
         ft_write_multiple(properties->precision - (sz_result - 2), '0');
@@ -49,6 +49,7 @@ int				_p_pointer(t_proper *properties, va_list *args)
 	int			total_sz;
 
 	total_sz = 0;
+	can_ignore_zero(properties);
 	val = va_arg(*args, long);
 	str = ft_itoa_base(val, 16, 'a');
 	sz_result = (int)ft_strlen(str) + 2;

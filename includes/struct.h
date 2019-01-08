@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 02:01:13 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/08 02:18:31 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct	s_flags // flags list in order of priority
 void				ft_putnbr_long(long long n);
 void				ft_putnbr_ullong(unsigned long long n);
 int					contain_flag(t_proper *props, enum e_flags flag);
+void				can_ignore_zero(t_proper *props);
 int					ft_ll_size(long long int nb);
 int					ft_ull_size(unsigned long long nb);
 void				ft_write_multiple(int sz, char c);
