@@ -6,32 +6,47 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/09 03:36:21 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/10 02:43:20 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static void     print_decimal(double db)
+static double     get_decimal(double db, int precision)
 {
-    db -= (double)(int)db;
-	while (db != 0.0)
+	double val = (double)db;
+	val -= (double)(int)val;
+	while (precision--)
 	{
-		db *= 10;
-		ft_putchar('0' + (int)db);
-		db -= (double)(int)db;
-		
+		val *= 10.0f;
+		if (precision == 0)
+			val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
     }
+	return val;
+}
+
+
+static void			print_decimal(double decimal)
+{
+
 }
 
 int             _p_float(t_proper *properties, va_list *args)
 {
     double  db;
+	int		chain_sz;
+	double	decimal;
 
+	if (properties->precision == -1)
+		properties->precision = 6;
     db = va_arg(*args, double);
-    ft_putnbr((int)db);
-    ft_putchar('.');
-    print_decimal(db);
-    (void)properties;
-    return (0);
+	chain_sz = properties->precision + 1;
+	chain_sz += ft_ll_size((long long)db);
+	if (properties->min_w > chain_sz)
+		chain_sz += (properties->min_w - chain_sz);
+    decimal = get_decimal(db, properties->precision);
+	ft_putnbr_long((long long)db);
+	ft_putchar('.');
+	ft_putnbr_long((long long)decimal);
+    return (chain_sz);
 }
