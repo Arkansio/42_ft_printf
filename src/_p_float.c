@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/11 02:08:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/11 02:33:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ static int      calcul_blank_w(t_proper *properties, int str_sz)
     return (0);
 }
 
-static double     get_decimal(double db, int precision)
+static int		get_decimal(double val, int precision)
 {
-	double val = (double)db;
 	val -= (double)(int)val;
 	while (precision--)
 	{
