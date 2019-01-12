@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/12 01:45:20 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/12 01:51:25 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ int             _p_float(t_proper *properties, va_list *args)
 	if (contain_flag(properties, space) && db >= 0)
 	{
 		ft_putchar(' ');
+		chain_sz++;
+	}
+	if (db < 0)
+	{
+		ft_putchar('-');
 		chain_sz++;
 	}
     decimal = get_decimal(db, properties->precision);
