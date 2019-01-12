@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/12 01:51:25 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/12 03:01:11 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@ static int      calcul_blank_w(t_proper *properties, int str_sz)
     return (0);
 }
 
+static double		round_val(double val)
+{
+	int		i;
+	int		sz;
+
+	sz = ft_ll_size((long long)val);
+	while (i < sz)
+	{
+		if (val )
+		i++;
+	}
+}
+
 static int		get_decimal(double val, int precision)
 {
 	val -= (double)(int)val;
@@ -35,7 +48,7 @@ static int		get_decimal(double val, int precision)
 		if (precision == 0)
 			val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
     }
-	return val;
+	return (int)val;
 }
 
 static void			print_decimal(long long decimal, t_proper *properties, int zero)
