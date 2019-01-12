@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/11 02:33:32 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/12 01:45:20 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,36 @@ static int		get_decimal(double val, int precision)
 	return val;
 }
 
-static void			print_decimal(long long decimal, t_proper *properties)
+static void			print_decimal(long long decimal, t_proper *properties, int zero)
 {
 	int		sz;
 
-	sz = ft_ll_size(decimal);
-	if (decimal != 0)
-		ft_putnbr_long(decimal);
-	else
-		sz = 0;
+	if (properties->precision == 0)
+		return ;
+	sz = ft_ll_size(decimal) + zero;
+	ft_write_multiple(zero, '0');
+	ft_putnbr_long(decimal);
 	if (sz < properties->precision)
 		ft_write_multiple(properties->precision - sz, '0');	
+}
+
+static int			get_zero_before(double val, int precision)
+{
+	int		i;
+	int		tmp;
+
+	i = precision;
+	val -= (double)(int)val;
+	while (i--)
+		val *= 10.0f;
+	val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
+	tmp = ft_ll_size((long long)val);
+//	printf("\nDecimale: %d", (int)val);
+//	printf("\nSize decimal: %d", (int)tmp);
+//	printf("\nZero: %d\n", precision - tmp);
+	if (tmp < precision)
+		return (precision - tmp);
+	return (0);
 }
 
 int             _p_float(t_proper *properties, va_list *args)
@@ -75,7 +94,7 @@ int             _p_float(t_proper *properties, va_list *args)
 		chain_sz--;
 	else
 		ft_putchar('.');
-	print_decimal((long long)decimal, properties);
+	print_decimal((long long)decimal, properties, get_zero_before(db, properties->precision));
 	if (contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, chain_sz), ' ');
 	if (properties->min_w > chain_sz)

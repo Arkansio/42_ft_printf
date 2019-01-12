@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/11 02:09:09 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/12 01:08:15 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -656,4 +656,20 @@ int		main()
 	nb1 = printf(t88, 0.0, 0.01);
 	nb2 = ft_printf(t88, 0.0, 0.01);
 	print_result(nb1, nb2);
+
+	char		t89[] = "[t88] Print test: %.f %.2f\n";
+	nb1 = printf(t89, 0.1234, 0.1234);
+	nb2 = ft_printf(t89, 0.1234, 0.1234);
+	print_result(nb1, nb2);
+
+	char		t90[] = "[t90] Print test: %.f %.2f\n";
+	nb1 = printf(t90, -0.1234, -0.1234);
+	nb2 = ft_printf(t90, -0.1234, -0.1234);
+	print_result(nb1, nb2);
+
+	char		t91[] = "[t91] Print test: %.f %.2f\n";
+	nb1 = printf(t90, -42.1234, -42.1234);
+	nb2 = ft_printf(t90, -42.1234, -42.1234);
+	print_result(nb1, nb2);
+
 }
