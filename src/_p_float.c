@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/12 03:09:05 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/13 00:17:04 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,11 @@ static int      calcul_blank_w(t_proper *properties, int str_sz)
 
 static int		get_decimal(double val, int precision)
 {
-	val = -val;
+	val = (val < 0) ? -val : val;
 	val -= (double)(int)val;
 	while (precision--)
-	{
 		val *= 10.0f;
-		if (precision == 0)
-			val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
-    }
+	val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
 	return (int)val;
 }
 
@@ -58,6 +55,7 @@ static int			get_zero_before(double val, int precision)
 	int		tmp;
 
 	i = precision;
+	val = (val < 0) ? -val : val;
 	val -= (double)(int)val;
 	while (i--)
 		val *= 10.0f;
