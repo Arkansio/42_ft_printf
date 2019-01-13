@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/13 02:29:35 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/13 04:31:06 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static long double		get_decimal(long double val, int precision)
 {
 	val = (val < 0) ? -val : val;
 	val -= (long double)(long long)val;
+	if (precision >= 19)
+		precision = 18;
 	while (precision--)
 		val *= 10.0;
 	val += (long long)(val * 10.0f) % 10 >= 5 ? 1 : 0;
@@ -58,6 +60,8 @@ static int			get_zero_before(double val, int precision)
 	i = precision;
 	val = (val < 0) ? -val : val;
 	val -= (double)(int)val;
+	if (precision >= 19)
+		precision = 18;
 	while (i--)
 		val *= 10.0;
 	val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
