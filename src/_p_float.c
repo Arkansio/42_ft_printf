@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/13 00:17:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/13 02:29:35 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,21 @@ static int      calcul_blank_w(t_proper *properties, int str_sz)
     return (0);
 }
 
-static int		get_decimal(double val, int precision)
+static long double		get_decimal(long double val, int precision)
 {
 	val = (val < 0) ? -val : val;
-	val -= (double)(int)val;
+	val -= (long double)(long long)val;
 	while (precision--)
-		val *= 10.0f;
-	val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
-	return (int)val;
+		val *= 10.0;
+	val += (long long)(val * 10.0f) % 10 >= 5 ? 1 : 0;
+	return (long double)val;
 }
 
-static void			print_decimal(long long decimal, t_proper *properties, int zero)
+static void			print_decimal(long double decimal, t_proper *properties, int zero)
 {
 	int		sz;
 
+	decimal = get_decimal(decimal, properties->precision);
 	if (properties->precision == 0)
 		return ;
 	sz = ft_ll_size(decimal) + zero;
@@ -58,7 +59,7 @@ static int			get_zero_before(double val, int precision)
 	val = (val < 0) ? -val : val;
 	val -= (double)(int)val;
 	while (i--)
-		val *= 10.0f;
+		val *= 10.0;
 	val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
 	tmp = ft_ll_size((long long)val);
 //	printf("\nDecimale: %d", (int)val);
@@ -73,7 +74,6 @@ int             _p_float(t_proper *properties, va_list *args)
 {
     double  db;
 	int		chain_sz;
-	double	decimal;
 
 	if (properties->precision == -1)
 		properties->precision = 6;
@@ -90,7 +90,6 @@ int             _p_float(t_proper *properties, va_list *args)
 		ft_putchar('-');
 		chain_sz++;
 	}
-    decimal = get_decimal(db, properties->precision);
 	if (!contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, chain_sz), contain_flag(properties, zero) ? '0' : ' ');
 	ft_putnbr_long((long long)db);
@@ -98,7 +97,7 @@ int             _p_float(t_proper *properties, va_list *args)
 		chain_sz--;
 	else
 		ft_putchar('.');
-	print_decimal((long long)decimal, properties, get_zero_before(db, properties->precision));
+	print_decimal(db, properties, get_zero_before(db, properties->precision));
 	if (contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, chain_sz), ' ');
 	if (properties->min_w > chain_sz)
