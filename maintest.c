@@ -6,14 +6,14 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/13 04:12:20 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/13 20:16:16 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include "unistd.h"
 #include <limits.h>
-
+#include <float.h>
 
 #define SUCCESS "\x1b[32m  ▒ ▒ ▒ Success! ▒ ▒ ▒ \x1b[0m\n\n"
 
@@ -696,5 +696,11 @@ int		main()
 	nb1 = printf(t96, 42.1249, -42.1789);
 	nb2 = ft_printf(t96, 42.1249, -42.1789);
 	print_result(nb1, nb2);
+
+	char		t97[] = "[t97] Print test: %.2f %.18f\n";
+	nb1 = printf(t97, DBL_MAX, 1444444525.256);
+	nb2 = ft_printf(t97, DBL_MAX, 1444444525.256);
+	print_result(nb1, nb2);
+
 
 }
