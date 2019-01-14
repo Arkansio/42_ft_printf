@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 03:20:24 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/08 02:21:34 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:18:59 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ int				_p_hex_u(t_proper *properties, va_list *args)
 	total_sz += calcul_blank_w(properties, sz_result, val) + sz_result;
 	if (properties->precision > sz_result)
 		total_sz += (properties->precision - sz_result);
+	free(str);
 	return (total_sz);
 }
