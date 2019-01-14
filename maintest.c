@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/13 20:16:16 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:21:16 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -677,12 +677,12 @@ int		main()
 	nb2 = ft_printf(t92, -42.1234, -42.1259);
 	print_result(nb1, nb2);
 
-	char		t93[] = "[t92] Print test: %.3f %.4f\n";
+	char		t93[] = "[t93] Print test: %.3f %.4f\n";
 	nb1 = printf(t93, 42.125555555555559, -42.125555555555555);
 	nb2 = ft_printf(t93, 42.125555555555559, -42.125555555555555);
 	print_result(nb1, nb2);
 
-	char		t94[] = "[t93] Print test: %.3f %.20f\n";
+	char		t94[] = "[t94] Print test: %.3f %.20f\n";
 	nb1 = printf(t94, 42.12555555555555555555555, -42.125555555555555);
 	nb2 = ft_printf(t94, 42.12555555555555555555555, -42.125555555555555);
 	print_result(nb1, nb2);
@@ -697,9 +697,9 @@ int		main()
 	nb2 = ft_printf(t96, 42.1249, -42.1789);
 	print_result(nb1, nb2);
 
-	char		t97[] = "[t97] Print test: %.2f %.18f\n";
-	nb1 = printf(t97, DBL_MAX, 1444444525.256);
-	nb2 = ft_printf(t97, DBL_MAX, 1444444525.256);
+	char		t97[] = "[t97] Print test: %.2f %.6f\n";
+	nb1 = printf(t97, 1236.25, 1444444525.25652);
+	nb2 = ft_printf(t97, 1236.25, 1444444525.25652);
 	print_result(nb1, nb2);
 
 
