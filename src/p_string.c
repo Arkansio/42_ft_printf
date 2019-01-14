@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_string.c                                        :+:      :+:    :+:   */
+/*   p_string.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:33:20 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:56:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:47:16 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-int		_p_string(t_proper *properties, va_list *args)
+int		p_string(t_proper *properties, va_list *args)
 {
     char	*str;
 	int		chain_z;

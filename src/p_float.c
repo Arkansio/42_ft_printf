@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_float.c                                         :+:      :+:    :+:   */
+/*   p_float.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/13 04:31:06 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:49:02 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int			get_zero_before(double val, int precision)
 	return (0);
 }
 
-int             _p_float(t_proper *properties, va_list *args)
+int             p_float(t_proper *properties, va_list *args)
 {
     double  db;
 	int		chain_sz;

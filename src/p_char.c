@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_modulo.c                                        :+:      :+:    :+:   */
+/*   p_char.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 23:54:06 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 02:04:32 by mgessa           ###   ########.fr       */
+/*   Created: 2018/12/17 21:22:12 by mgessa            #+#    #+#             */
+/*   Updated: 2019/01/14 22:49:14 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-int			_p_modulo(t_proper *properties, va_list *args)
+int			p_char(t_proper *properties, va_list *args)
 {
-	int		chain_z;
+	unsigned char	c;
+	int				chain_z;
 
-	(void)args;
+	c = (unsigned char)va_arg(*args, int);
 	chain_z = 1;
 	print_first_padding(properties, &chain_z);
-	ft_putfaststr("%%", 1);
+    write(1, &c, 1);
 	print_end_padding(properties, &chain_z);
 	return (chain_z);
 }

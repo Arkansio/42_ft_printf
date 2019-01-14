@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_uint.c                                          :+:      :+:    :+:   */
+/*   p_uint.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 00:47:53 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:47:29 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:47:10 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char			can_set_zero(t_proper *properties, int int_sz)
 		return (contain_flag(properties, zero) ? '0' : ' ');
 }
 
-int					_p_uint(t_proper *properties, va_list *args)
+int					p_uint(t_proper *properties, va_list *args)
 {
 	unsigned long long int	val;
 	int						total_sz;

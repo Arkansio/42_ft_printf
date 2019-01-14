@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_int.c                                           :+:      :+:    :+:   */
+/*   p_int.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:52:57 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:48:14 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char		can_set_zero(t_proper *properties, int int_sz)
 		return (contain_flag(properties, zero) ? '0' : ' ');
 }
 
-int				_p_int(t_proper *properties, va_list *args)
+int				p_int(t_proper *properties, va_list *args)
 {
 	long long int	val;
 	int				total_sz;

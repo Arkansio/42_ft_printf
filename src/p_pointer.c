@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_pointer.c                                       :+:      :+:    :+:   */
+/*   p_pointer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 05:11:05 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 02:05:46 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:47:31 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void		print_all(t_proper *properties, char *str, int sz_result)
 		ft_write_multiple(calcul_blank_w(properties, sz_result), ' ');
 }
 
-int				_p_pointer(t_proper *properties, va_list *args)
+int				p_pointer(t_proper *properties, va_list *args)
 {
 	char			*str;
 	long long		val;

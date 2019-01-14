@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   globales.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 03:45:23 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/04 22:58:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:49:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ static t_flags				g_flags[] =
 
 static t_type				g_types[] =
 {
-	{'c', &_p_char},
-	{'s', &_p_string},
-	{'p', &_p_pointer},
-    {'d', &_p_int},
-    {'i', &_p_int},
-    {'o', &_p_octale},
-    {'u', &_p_uint},
-    {'x', &_p_hex_l},
-	{'X', &_p_hex_u},
-	{'f', &_p_float},
-	{'%', &_p_modulo},
+	{'c', &p_char},
+	{'s', &p_string},
+	{'p', &p_pointer},
+    {'d', &p_int},
+    {'i', &p_int},
+    {'o', &p_octale},
+    {'u', &p_uint},
+    {'x', &p_hex_l},
+	{'X', &p_hex_u},
+	{'f', &p_float},
+	{'%', &p_modulo},
 	{'0', NULL}
 };
 

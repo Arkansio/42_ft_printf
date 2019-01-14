@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _p_hex_u.c                                         :+:      :+:    :+:   */
+/*   p_hex_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 03:20:24 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 02:04:49 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:48:34 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void		print_all(t_proper *properties, char *str, long long val, int sz_re
 		ft_write_multiple(calcul_blank_w(properties, sz_result, val), ' ');
 }
 
-int				_p_hex_u(t_proper *properties, va_list *args)
+int				p_hex_u(t_proper *properties, va_list *args)
 {
 	char		*str;
 	long long	val;

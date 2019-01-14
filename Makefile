@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2019/01/14 01:09:05 by mgessa           ###   ########.fr        #
+#    Updated: 2019/01/14 22:50:45 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,24 +27,24 @@ SRCS = ft_printf.c \
 		ft_parse_flags.c \
 		pass_min_width.c \
 		ft_putfaststr.c \
-		_p_float.c \
-		_p_string.c \
-		_p_modulo.c \
+		p_float.c \
+		p_string.c \
+		p_modulo.c \
 		ft_write_multiple.c \
-		_p_char.c \
+		p_char.c \
 		padding_char.c \
 		contain_flag.c \
-		_p_int.c \
+		p_int.c \
 		ft_putnbr_long.c \
-		_p_octale.c \
+		p_octale.c \
 		ft_itoa_base.c \
 		get_int_flags.c \
 		ft_ll_size.c \
 		get_uint_flags.c \
-		_p_uint.c \
-		_p_hex_l.c \
-		_p_hex_u.c \
-		_p_pointer.c \
+		p_uint.c \
+		p_hex_l.c \
+		p_hex_u.c \
+		p_pointer.c \
 		ft_putnbr_ullong.c \
 		ft_ull_size.c \
 		can_ignore_zero.c

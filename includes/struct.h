@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/08 02:18:31 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 22:50:15 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,16 @@ void        		print_end_padding(t_proper *properties, int *chain_z);
 char				*ft_itoa_base(unsigned long long value, int base, char starting);
 long long int		get_int_flags(t_proper *properties, va_list *args);
 unsigned long long	get_uint_flags(t_proper *properties, va_list *args);
-int					_p_octale(t_proper *properties, va_list *args);
-int					_p_int(t_proper *properties, va_list *args);
-int					_p_char(t_proper *properties, va_list *args);
-int					_p_modulo(t_proper *properties, va_list *args);
-int					_p_string(t_proper *properties, va_list *args);
-int					_p_float(t_proper *properties, va_list *args);
-int					_p_uint(t_proper *properties, va_list *args);
-int					_p_hex_l(t_proper *properties, va_list *args);
-int					_p_hex_u(t_proper *properties, va_list *args);
-int					_p_pointer(t_proper *properties, va_list *args);
+int					p_octale(t_proper *properties, va_list *args);
+int					p_int(t_proper *properties, va_list *args);
+int					p_char(t_proper *properties, va_list *args);
+int					p_modulo(t_proper *properties, va_list *args);
+int					p_string(t_proper *properties, va_list *args);
+int					p_float(t_proper *properties, va_list *args);
+int					p_uint(t_proper *properties, va_list *args);
+int					p_hex_l(t_proper *properties, va_list *args);
+int					p_hex_u(t_proper *properties, va_list *args);
+int					p_pointer(t_proper *properties, va_list *args);
 int					pass_min_width(const char *str, int max);
 int					pass_precision(const char *str, int max);
 int 				get_min_width(const char *str, int max);
