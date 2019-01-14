@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 23:38:34 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:43:50 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 20:56:59 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_itoa_base(unsigned long long value, int base, char starting)
 	int		i;
 
 	i = 0;
-	if (!(val = malloc(sizeof(char) * 30)))
+	if (!(val = (char*)malloc(sizeof(char) * 30)))
 		return (NULL);
 	if (ft_zero(val, value))
 		return (val);
