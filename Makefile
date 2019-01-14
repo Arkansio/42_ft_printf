@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2019/01/08 02:19:10 by mgessa           ###   ########.fr        #
+#    Updated: 2019/01/14 01:09:05 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,8 @@ SRCSL = ft_atoi.c \
 		ft_putnbr.c \
 		ft_putchar.c \
 		ft_strcpy.c \
-		ft_strrev.c
+		ft_strrev.c \
+		ft_lstdel.c
 
 FLAGS = -Wall \
 		-Werror \
