@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 19:43:32 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/18 01:34:17 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 02:08:16 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 
 int		ft_printf(const char *format, ...)
 {
-    va_list ap;
-    int     sz;
+	va_list		ap;
+	int			sz;
 
-    va_start(ap, format);
-    sz = ft_parse_rd(format, &ap);
-    va_end(ap);
-
-	return sz;
+	va_start(ap, format);
+	sz = ft_parse_rd(format, &ap);
+	va_end(ap);
+	return (sz);
 }

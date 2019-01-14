@@ -6,14 +6,14 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 02:39:14 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/17 02:40:24 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:36:09 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-void        ft_write_multiple(int sz, char c)
+void	ft_write_multiple(int sz, char c)
 {
-    while (sz-- > 0)
-        write(1, &c, 1);
+	while (sz-- > 0)
+		write(1, &c, 1);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   _p_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:33:20 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 02:24:42 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:56:04 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-int			_p_string(t_proper *properties, va_list *args)
+int		_p_string(t_proper *properties, va_list *args)
 {
     char	*str;
 	int		chain_z;
@@ -30,7 +30,7 @@ int			_p_string(t_proper *properties, va_list *args)
 		ft_putfaststr("(null)", -1);
 	else if (properties->precision == -1 || properties->precision > chain_z)
 		ft_putfaststr(str, chain_z);
-    else if (str != NULL)
+	else if (str != NULL)
 		ft_putfaststr(str, properties->precision);
 	print_end_padding(properties, &chain_z);
 	if (properties->min_w > chain_z)

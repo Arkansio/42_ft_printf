@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:45:43 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/18 03:36:44 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:30:45 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	is_flag(const char *c)
 	return (0);
 }
 
-static int 	is_convert(const char c)
+static int	is_convert(const char c)
 {
 	int		i;
 
@@ -56,7 +56,7 @@ static int	is_valid(const char *str)
 	{
 		if (is_convert(str[i]))
 			return (i + 1);
-		if((fl_st = is_flag(&str[i])) > 1)
+		if ((fl_st = is_flag(&str[i])) > 1)
 			i += fl_st - 1;
 		else if (!is_vc(str[i]) && !fl_st)
 			return (i);
@@ -70,10 +70,7 @@ int			ft_validconv(const char *format)
 
 	if (format[0] != '%')
 		return (0);
-//	printf("format is: '%s'", format);
 	if (!(sz_f = is_valid(format)))
 		return (0);
-//	printf("is valid !\n");
-//	printf("Size: %d!\n", sz_f);
 	return (sz_f);
 }

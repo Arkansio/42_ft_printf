@@ -6,24 +6,22 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 20:48:21 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/14 01:29:45 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:38:43 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-void        ft_strlst_read(t_list **alst)
+void	ft_strlst_read(t_list **alst)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-//    printf("hey");
-    if (!alst)
-        return ;
-//    printf("hey\n");
-    tmp = alst[0];
-    while (tmp)
-    {
-        printf("%s", (char*)tmp->content);
-        tmp = tmp->next;
-    }
+	if (!alst)
+		return ;
+	tmp = alst[0];
+	while (tmp)
+	{
+		printf("%s", (char*)tmp->content);
+		tmp = tmp->next;
+	}
 }

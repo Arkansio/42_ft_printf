@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 18:43:50 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:21:21 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:45:34 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int				ft_convert(const char *str, int max, va_list *args)
 		ft_lstdel(&properties.flags, delete_flag);
 		return (copy_l);
 	}
-	ft_write_multiple(properties.min_w - 1, contain_flag(&properties, zero) ? '0' : ' ');
+	copy_l = contain_flag(&properties, zero) ? '0' : ' ';
+	ft_write_multiple(properties.min_w - 1, copy_l);
 	ft_lstdel(&properties.flags, delete_flag);
 	return (properties.min_w >= 0 ? properties.min_w - 1 : 0);
 }

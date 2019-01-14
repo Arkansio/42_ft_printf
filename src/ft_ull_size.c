@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ull_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/06 02:00:54 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 02:01:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:39:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_ull_size(unsigned long long nb)
 {
-    int     i;
+	int		i;
 
-    i = 1;
-    while (nb /= 10)
-        i++;
-    return (i);
+	i = 1;
+	while (nb /= 10)
+		i++;
+	return (i);
 }

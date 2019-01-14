@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_long.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 00:42:15 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/25 23:58:16 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:38:03 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	ft_check_ex(long long nb)
 
 void		ft_putnbr_long(long long n)
 {
-	long long temp;
-	long long size;
-	int nb_res;
+	long long	temp;
+	long long	size;
+	int			nb_res;
 
 	temp = n;
 	size = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 23:38:34 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 01:15:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:43:50 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int		ft_zero(char *str, unsigned long long val)
 
 char	*ft_itoa_base(unsigned long long value, int base, char starting)
 {
-	char *val;
-	int i;
+	char	*val;
+	int		i;
 
 	i = 0;
 	if (!(val = malloc(sizeof(char) * 30)))

@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_ullong.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/06 01:47:59 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/06 01:58:17 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:36:45 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-
 void		ft_putnbr_ullong(unsigned long long n)
 {
-	unsigned long long temp;
-	unsigned long long size;
-	int nb_res;
+	unsigned long long	temp;
+	unsigned long long	size;
+	int					nb_res;
 
 	temp = n;
 	size = 1;

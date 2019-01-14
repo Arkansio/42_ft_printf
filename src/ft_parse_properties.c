@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 20:39:16 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/19 23:48:04 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:51:51 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 static void		ft_readflags(t_list **alst)
 {
-    t_list *tmp;
+	t_list *tmp;
 
-    if (!alst)
-        return ;
-    tmp = alst[0];
-    while (tmp)
-    {
-//        printf("%d -> ", *(enum e_flags*)tmp->content);
-        tmp = tmp->next;
-    }
+	if (!alst)
+		return ;
+	tmp = alst[0];
+	while (tmp)
+	{
+		tmp = tmp->next;
+	}
 }
 
-void        ft_parse_properties(t_proper *proper, const char *str, int max)
+void			ft_parse_properties(t_proper *proper, const char *str, int max)
 {
-    proper->flags = NULL;
-    proper->precision = get_precision(str, max);
-    proper->min_w = get_min_width(str, max);
-    ft_parse_flags(&proper->flags, str, max);
-
-    ft_readflags(&proper->flags);
+	proper->flags = NULL;
+	proper->precision = get_precision(str, max);
+	proper->min_w = get_min_width(str, max);
+	ft_parse_flags(&proper->flags, str, max);
+	ft_readflags(&proper->flags);
 }

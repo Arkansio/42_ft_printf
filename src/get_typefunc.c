@@ -6,14 +6,14 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 02:12:11 by mgessa            #+#    #+#             */
-/*   Updated: 2018/12/16 00:40:23 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/14 01:32:55 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "globales.h"
 
-int 	get_typefunc(const char c)
+int		get_typefunc(const char c)
 {
 	int		i;
 
