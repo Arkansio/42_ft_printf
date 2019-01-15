@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 18:43:50 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:45:34 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 20:41:05 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		delete_flag(void *content, size_t sz)
 
 int				ft_convert(const char *str, int max, va_list *args)
 {
-	t_proper    properties;
+	t_proper	properties;
 	int			i_tab;
 	char		*new_str;
 	int			copy_l;

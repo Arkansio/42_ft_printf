@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 02:14:20 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:55:22 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 20:56:50 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		can_ignore_zero(t_proper *props)
 {
 	t_list	*tmp;
 
-    if (props->precision < 0)
+	if (props->precision < 0)
 		return ;
 	tmp = props->flags;
 	while (tmp)

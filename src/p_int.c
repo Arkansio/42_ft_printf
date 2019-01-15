@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 22:48:14 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 20:56:15 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int		calcul_blank_w(t_proper *properties, long long val)
 {
-	int     sz;
+	int		sz;
 
 	if (properties->min_w == -1)
 		return (0);
@@ -24,7 +24,8 @@ static int		calcul_blank_w(t_proper *properties, long long val)
 		sz--;
 	if (properties->precision > sz)
 		sz = properties->precision;
-	if (val < 0 || contain_flag(properties, space) || contain_flag(properties, plus))
+	if (val < 0 || contain_flag(properties, space)
+	|| contain_flag(properties, plus))
 		sz++;
 	if (sz < properties->min_w)
 		return (properties->min_w - sz);

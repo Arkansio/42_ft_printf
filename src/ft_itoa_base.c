@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 23:38:34 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 20:56:59 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 20:57:22 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int		ft_zero(char *str, unsigned long long val)
 	return (1);
 }
 
-char	*ft_itoa_base(unsigned long long value, int base, char starting)
+char			*ft_itoa_base(unsigned long long value, int base, char starting)
 {
 	char	*val;
 	int		i;

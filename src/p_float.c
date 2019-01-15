@@ -6,24 +6,24 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 22:49:02 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 21:00:50 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static int      calcul_blank_w(t_proper *properties, int str_sz)
+static int		calcul_blank_w(t_proper *properties, int str_sz)
 {
-    int     sz;
+	int		sz;
 
 	if (properties->precision == 0)
 		str_sz--;
-    if (properties->min_w == -1)
-        return (0);
+	if (properties->min_w == -1)
+		return (0);
 	sz = str_sz;
-    if (sz < properties->min_w)
-        return (properties->min_w - sz);
-    return (0);
+	if (sz < properties->min_w)
+		return (properties->min_w - sz);
+	return (0);
 }
 
 static long double		get_decimal(long double val, int precision)
@@ -76,12 +76,12 @@ static int			get_zero_before(double val, int precision)
 
 int             p_float(t_proper *properties, va_list *args)
 {
-    double  db;
+	double	db;
 	int		chain_sz;
 
 	if (properties->precision == -1)
 		properties->precision = 6;
-    db = va_arg(*args, double);
+	db = va_arg(*args, double);
 	chain_sz = properties->precision + 1;
 	chain_sz += ft_ll_size((long long)db);
 	if (contain_flag(properties, space) && db >= 0)
@@ -106,5 +106,5 @@ int             p_float(t_proper *properties, va_list *args)
 		ft_write_multiple(calcul_blank_w(properties, chain_sz), ' ');
 	if (properties->min_w > chain_sz)
 		chain_sz += (properties->min_w - chain_sz);
-    return (chain_sz);
+	return (chain_sz);
 }

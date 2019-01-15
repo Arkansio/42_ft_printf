@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 22:33:20 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 22:47:16 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 20:54:58 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		p_string(t_proper *properties, va_list *args)
 {
-    char	*str;
+	char	*str;
 	int		chain_z;
 
 	str = va_arg(*args, char *);
@@ -34,7 +34,7 @@ int		p_string(t_proper *properties, va_list *args)
 		ft_putfaststr(str, properties->precision);
 	print_end_padding(properties, &chain_z);
 	if (properties->min_w > chain_z)
-    	return (properties->min_w);
+		return (properties->min_w);
 	else
 		return (chain_z);
 }

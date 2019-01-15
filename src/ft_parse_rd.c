@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:40:19 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 20:43:30 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_parse_rd(const char *format, va_list *args)
 {
-    int		i;
+	int		i;
 	int		sz_cast;
 	int		total_sz;
 	int		sz_convert;
@@ -42,5 +42,5 @@ int			ft_parse_rd(const char *format, va_list *args)
 		else
 			i++;
 	}
-    return (total_sz);
+	return (total_sz);
 }
