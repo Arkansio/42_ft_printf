@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 00:47:53 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/15 20:56:40 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/15 22:52:17 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,21 @@ static char			can_set_zero(t_proper *properties, int int_sz)
 		return (contain_flag(properties, zero) ? '0' : ' ');
 }
 
+static void			calcul_data(t_proper *properties, int *total_sz,
+int int_sz, unsigned long long val)
+{
+	*total_sz = 0;
+	if (contain_flag(properties, zero))
+		*total_sz += print_prefix(properties);
+	if (!contain_flag(properties, minus))
+		ft_write_multiple(calcul_blank_w(properties, val),
+		can_set_zero(properties, int_sz));
+	if (!contain_flag(properties, zero))
+		*total_sz += print_prefix(properties);
+	if (properties->precision > int_sz)
+		*total_sz += (properties->precision - int_sz);
+}
+
 int					p_uint(t_proper *properties, va_list *args)
 {
 	unsigned long long int	val;
@@ -50,18 +65,10 @@ int					p_uint(t_proper *properties, va_list *args)
 	int						int_sz;
 
 	val = 0;
-	total_sz = 0;
 	can_ignore_zero(properties);
 	val = get_uint_flags(properties, args);
 	int_sz = ft_ull_size(val);
-	if (contain_flag(properties, zero))
-		total_sz += print_prefix(properties);
-	if (!contain_flag(properties, minus))
-		ft_write_multiple(calcul_blank_w(properties, val), can_set_zero(properties, int_sz));
-	if (!contain_flag(properties, zero))
-		total_sz += print_prefix(properties);
-	if (properties->precision > int_sz)
-		total_sz += (properties->precision - int_sz);
+	calcul_data(properties, &total_sz, int_sz, val);
 	if (properties->precision > int_sz)
 		ft_write_multiple(properties->precision - int_sz, '0');
 	if (!(val == 0 && properties->precision == 0))
