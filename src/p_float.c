@@ -6,13 +6,13 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/15 21:00:50 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/17 04:40:43 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static int		calcul_blank_w(t_proper *properties, int str_sz)
+static int				calcul_blank_w(t_proper *properties, int str_sz)
 {
 	int		sz;
 
@@ -34,11 +34,12 @@ static long double		get_decimal(long double val, int precision)
 		precision = 18;
 	while (precision--)
 		val *= 10.0;
-	val += (long long)(val * 10.0f) % 10 >= 5 ? 1 : 0;
+	val += ((long long)(val * 10.0f)) % 10 >= 5 ? 1 : 0;
 	return (long double)val;
 }
 
-static void			print_decimal(long double decimal, t_proper *properties, int zero)
+static void				print_decimal(long double decimal, t_proper *properties,
+int zero)
 {
 	int		sz;
 
@@ -49,10 +50,10 @@ static void			print_decimal(long double decimal, t_proper *properties, int zero)
 	ft_write_multiple(zero, '0');
 	ft_putnbr_long(decimal);
 	if (sz < properties->precision)
-		ft_write_multiple(properties->precision - sz, '0');	
+		ft_write_multiple(properties->precision - sz, '0');
 }
 
-static int			get_zero_before(double val, int precision)
+static int				get_zero_before(double val, int precision)
 {
 	int		i;
 	int		tmp;
@@ -64,7 +65,7 @@ static int			get_zero_before(double val, int precision)
 		precision = 18;
 	while (i--)
 		val *= 10.0;
-	val += (int)(val * 10.0f) % 10 >= 5 ? 1 : 0;
+	val += ((long long)(val * 10.0f)) % 10 >= 5 ? 1 : 0;
 	tmp = ft_ll_size((long long)val);
 //	printf("\nDecimale: %d", (int)val);
 //	printf("\nSize decimal: %d", (int)tmp);
@@ -74,7 +75,11 @@ static int			get_zero_before(double val, int precision)
 	return (0);
 }
 
-int             p_float(t_proper *properties, va_list *args)
+static int is_neg(float f) {
+    return (*((int*)&f) & 0x80000000) != 0;
+}
+
+int             		p_float(t_proper *properties, va_list *args)
 {
 	double	db;
 	int		chain_sz;
@@ -84,14 +89,19 @@ int             p_float(t_proper *properties, va_list *args)
 	db = va_arg(*args, double);
 	chain_sz = properties->precision + 1;
 	chain_sz += ft_ll_size((long long)db);
-	if (contain_flag(properties, space) && db >= 0)
+	if (contain_flag(properties, space) && db >= 0 && !contain_flag(properties, plus))
 	{
 		ft_putchar(' ');
 		chain_sz++;
 	}
-	if (db < 0)
+	if (db < -0.0 || is_neg((float)db))
 	{
 		ft_putchar('-');
+		chain_sz++;
+	}
+	else if (contain_flag(properties, plus) && db >= 0)
+	{
+		ft_putchar('+');
 		chain_sz++;
 	}
 	if (!contain_flag(properties, minus))
