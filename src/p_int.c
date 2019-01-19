@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 22:33:28 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/15 20:56:15 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/19 04:43:32 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,18 @@ static char		can_set_zero(t_proper *properties, int int_sz)
 		return (contain_flag(properties, zero) ? '0' : ' ');
 }
 
+static void		print_all(t_proper *properties, int *int_sz, long long val)
+{
+	if (properties->precision > *int_sz)
+		ft_write_multiple(properties->precision - *int_sz, '0');
+	if (!(val == 0 && properties->precision == 0))
+		ft_putnbr_long(val);
+	else
+		--(*int_sz);
+	if (contain_flag(properties, minus))
+		ft_write_multiple(calcul_blank_w(properties, val), ' ');
+}
+
 int				p_int(t_proper *properties, va_list *args)
 {
 	long long int	val;
@@ -66,23 +78,18 @@ int				p_int(t_proper *properties, va_list *args)
 	can_ignore_zero(properties);
 	val = get_int_flags(properties, args);
 	int_sz = ft_ll_size(val);
-	if ((contain_flag(properties, space) && !contain_flag(properties, plus)) && val >= 0)
+	if ((contain_flag(properties, space) &&
+	!contain_flag(properties, plus)) && val >= 0)
 		ft_putchar(' ');
 	if (contain_flag(properties, zero))
 		total_sz += print_prefix(properties, val);
 	if (!contain_flag(properties, minus))
-		ft_write_multiple(calcul_blank_w(properties, val), can_set_zero(properties, int_sz));
+		ft_write_multiple(calcul_blank_w(properties, val),
+		can_set_zero(properties, int_sz));
 	if (!contain_flag(properties, zero))
 		total_sz += print_prefix(properties, val);
 	if (properties->precision > int_sz)
 		total_sz += (properties->precision - int_sz);
-	if (properties->precision > int_sz)
-		ft_write_multiple(properties->precision - int_sz, '0');
-	if (!(val == 0 && properties->precision == 0))
-		ft_putnbr_long(val);
-	else
-		int_sz--;
-	if (contain_flag(properties, minus))
-		ft_write_multiple(calcul_blank_w(properties, val), ' ');
+	print_all(properties, &int_sz, val);
 	return (total_sz + calcul_blank_w(properties, val) + int_sz);
 }
