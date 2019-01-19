@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/17 04:40:43 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/19 21:59:18 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int             		p_float(t_proper *properties, va_list *args)
 	if (!contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, chain_sz), contain_flag(properties, zero) ? '0' : ' ');
 	ft_putnbr_long((long long)db);
-	if (properties->precision == 0)
+	if (properties->precision == 0 && !contain_flag(properties, diez))
 		chain_sz--;
 	else
 		ft_putchar('.');
