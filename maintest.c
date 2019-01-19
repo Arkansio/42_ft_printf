@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 20:58:09 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/19 21:57:41 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/19 23:27:18 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -731,6 +731,11 @@ int		main()
 	char		t103[] = "[t103] Print test: %#.d %.1 010d\n";
 	nb1 = printf(t103, -0, -0);
 	nb2 = ft_printf(t103, -0, -0);
+	print_result(nb1, nb2);
+
+	char		t104[] = "[t104] Print test: %#.f %.1 010f\n";
+	nb1 = printf(t104, -0.05, 0.0123);
+	nb2 = ft_printf(t104, -0.05, 0.0123);
 	print_result(nb1, nb2);
 
 }
