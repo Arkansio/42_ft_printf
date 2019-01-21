@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 19:21:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/19 05:22:28 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/21 20:22:23 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static int		calcul_blank_w(t_proper *properties, int str_sz, long long val)
 		sz = properties->precision;
 	if (sz < properties->min_w)
 		return (properties->min_w - sz);
-
 	return (0);
 }
 
