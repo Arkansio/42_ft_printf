@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 02:14:44 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/19 23:36:39 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/21 20:26:13 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		not_valid(int *total_sz, int *i, const char *format)
 	(*i)++;
 }
 
-int			ft_parse_rd(const char *format, va_list *args)
+int				ft_parse_rd(const char *format, va_list *args)
 {
 	int		i;
 	int		sz_cast;

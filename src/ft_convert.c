@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 18:43:50 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/15 20:41:05 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/21 20:26:38 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int				ft_convert(const char *str, int max, va_list *args)
 	new_str = NULL;
 	ft_parse_properties(&properties, str, max);
 	i_tab = get_typefunc(str[max - 1]);
-
 	if (max == 1)
 	{
 		ft_lstdel(&properties.flags, delete_flag);
