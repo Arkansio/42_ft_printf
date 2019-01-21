@@ -6,21 +6,20 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 22:50:15 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/21 22:54:15 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-#include "libft.h"
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+# include "libft.h"
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "stdio.h"
 
-#include "stdio.h"
-
-enum e_flags {
+enum				e_flags {
 	diez = 0,
 	zero = 1,
 	minus = 2,
@@ -34,7 +33,7 @@ enum e_flags {
 	end = -1
 };
 
-typedef	struct		s_proper // pass to g_types functions
+typedef	struct		s_proper
 {
 	t_list			*flags;
 	void			*value;
@@ -42,18 +41,17 @@ typedef	struct		s_proper // pass to g_types functions
 	int				min_w;
 }					t_proper;
 
-typedef struct		s_type // type to functions
+typedef struct		s_type
 {
 	char	type;
 	int		(*func)(t_proper *properties, va_list *args);
 }					t_type;
 
-typedef struct	s_flags // flags list in order of priority
+typedef struct		s_flags
 {
 	enum e_flags	flags_id;
 	char			*c_val;
-}				t_flags;
-
+}					t_flags;
 
 void				ft_putnbr_long(long long n);
 void				ft_putnbr_ullong(unsigned long long n);
@@ -62,10 +60,11 @@ void				can_ignore_zero(t_proper *props);
 int					ft_ll_size(long long int nb);
 int					ft_ull_size(unsigned long long nb);
 void				ft_write_multiple(int sz, char c);
-void        		ft_putfaststr(const char *str, int max);
-void        		print_first_padding(t_proper *properties, int *chain_z);
-void        		print_end_padding(t_proper *properties, int *chain_z);
-char				*ft_itoa_base(unsigned long long value, int base, char starting);
+void				ft_putfaststr(const char *str, int max);
+void				print_first_padding(t_proper *properties, int *chain_z);
+void				print_end_padding(t_proper *properties, int *chain_z);
+char				*ft_itoa_base(unsigned long long value, int base,
+char starting);
 long long int		get_int_flags(t_proper *properties, va_list *args);
 unsigned long long	get_uint_flags(t_proper *properties, va_list *args);
 int					p_octale(t_proper *properties, va_list *args);
@@ -80,13 +79,14 @@ int					p_hex_u(t_proper *properties, va_list *args);
 int					p_pointer(t_proper *properties, va_list *args);
 int					pass_min_width(const char *str, int max);
 int					pass_precision(const char *str, int max);
-int 				get_min_width(const char *str, int max);
+int					get_min_width(const char *str, int max);
 int					get_precision(const char *str, int max);
 int					get_typefunc(const char c);
 void				ft_lstaddend(t_list **alst, t_list *newlst);
 int					get_flag(const char *c, enum e_flags *flag);
 void				ft_parse_flags(t_list **lst, const char *str, int max);
-void				ft_parse_properties(t_proper *proper, const char *str, int max);
+void				ft_parse_properties(t_proper *proper, const char *str,
+int max);
 int					ft_convert(const char *str, int max, va_list *args);
 void				ft_strlst_read(t_list **alst);
 int					ft_validconv(const char *format);
