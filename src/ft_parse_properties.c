@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 20:39:16 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 01:51:51 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/22 02:20:22 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ static void		ft_readflags(t_list **alst)
 	}
 }
 
-void			ft_parse_properties(t_proper *proper, const char *str, int max)
+int				ft_parse_properties(t_proper *proper, const char *str, int max)
 {
 	proper->flags = NULL;
 	proper->precision = get_precision(str, max);
 	proper->min_w = get_min_width(str, max);
-	ft_parse_flags(&proper->flags, str, max);
+	if (ft_parse_flags(&proper->flags, str, max) == -1)
+		return (-1);
 	ft_readflags(&proper->flags);
+	return (1);
 }

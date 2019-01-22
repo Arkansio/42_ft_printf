@@ -6,24 +6,25 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 21:46:34 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/14 02:08:36 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/22 02:18:35 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-static void		add_flag(t_list **lst, enum e_flags flag)
+static int		add_flag(t_list **lst, enum e_flags flag)
 {
 	t_list		*n_flag;
 
 	n_flag = NULL;
 	if (!(n_flag = ft_lstnew((void*)&flag, sizeof(enum e_flags))))
-		exit(EXIT_FAILURE);
+		return (0);
 	(void)lst;
 	ft_lstaddend(lst, n_flag);
+	return (1);
 }
 
-void			ft_parse_flags(t_list **lst, const char *str, int max)
+int				ft_parse_flags(t_list **lst, const char *str, int max)
 {
 	int				i;
 	enum e_flags	flag;
@@ -39,7 +40,9 @@ void			ft_parse_flags(t_list **lst, const char *str, int max)
 		else if ((sz = get_flag(&str[i], &flag)))
 		{
 			i += sz - 1;
-			add_flag(lst, flag);
+			if (!add_flag(lst, flag))
+				return (-1);
 		}
 	}
+	return (1);
 }
