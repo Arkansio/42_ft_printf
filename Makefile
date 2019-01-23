@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2019/01/14 22:50:45 by mgessa           ###   ########.fr        #
+#    Updated: 2019/01/23 01:20:44 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,42 @@ $(NAME): $(OBJSL) $(OBJS)
 
 ./%.o: ./libft/src/%.c
 	gcc $(FLAGS) -c $^ -I ./libft/includes
+
+./%.o: ./src/conversion/float/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/int/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/hex/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/pointer/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/uint/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/string/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/modulo/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/octale/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/char/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/conversion/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/parsing/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
+
+./%.o: ./src/utils/%.c
+	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
 
 clean:
 	/bin/rm -f $(OBJS)
