@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/19 21:59:18 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/23 02:19:27 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,12 @@ static int				get_zero_before(double val, int precision)
 		val *= 10.0;
 	val += ((long long)(val * 10.0f)) % 10 >= 5 ? 1 : 0;
 	tmp = ft_ll_size((long long)val);
-//	printf("\nDecimale: %d", (int)val);
-//	printf("\nSize decimal: %d", (int)tmp);
-//	printf("\nZero: %d\n", precision - tmp);
 	if (tmp < precision)
 		return (precision - tmp);
 	return (0);
 }
 
-static int is_neg(float f) {
-    return (*((int*)&f) & 0x80000000) != 0;
-}
-
-int             		p_float(t_proper *properties, va_list *args)
+int						p_float(t_proper *properties, va_list *args)
 {
 	double	db;
 	int		chain_sz;
@@ -89,23 +82,10 @@ int             		p_float(t_proper *properties, va_list *args)
 	db = va_arg(*args, double);
 	chain_sz = properties->precision + 1;
 	chain_sz += ft_ll_size((long long)db);
-	if (contain_flag(properties, space) && db >= 0 && !contain_flag(properties, plus))
-	{
-		ft_putchar(' ');
-		chain_sz++;
-	}
-	if (db < -0.0 || is_neg((float)db))
-	{
-		ft_putchar('-');
-		chain_sz++;
-	}
-	else if (contain_flag(properties, plus) && db >= 0)
-	{
-		ft_putchar('+');
-		chain_sz++;
-	}
+	print_f_prefix(properties, &chain_sz, db);
 	if (!contain_flag(properties, minus))
-		ft_write_multiple(calcul_blank_w(properties, chain_sz), contain_flag(properties, zero) ? '0' : ' ');
+		ft_write_multiple(calcul_blank_w(properties, chain_sz),
+		contain_flag(properties, zero) ? '0' : ' ');
 	ft_putnbr_long((long long)db);
 	if (properties->precision == 0 && !contain_flag(properties, diez))
 		chain_sz--;

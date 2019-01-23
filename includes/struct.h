@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/22 02:20:34 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/23 02:17:09 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ typedef struct		s_flags
 	char			*c_val;
 }					t_flags;
 
+
+void				print_f_prefix(t_proper *properties, int *chain_sz,
+long double db);
+int					is_neg(float f);
 void				ft_putnbr_long(long long n);
 void				ft_putnbr_ullong(unsigned long long n);
 int					contain_flag(t_proper *props, enum e_flags flag);
