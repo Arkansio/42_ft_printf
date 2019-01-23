@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/23 02:17:09 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/23 02:21:50 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct		s_flags
 	enum e_flags	flags_id;
 	char			*c_val;
 }					t_flags;
-
 
 void				print_f_prefix(t_proper *properties, int *chain_sz,
 long double db);
