@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/23 02:21:50 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/24 02:26:56 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef struct		s_flags
 	char			*c_val;
 }					t_flags;
 
+
+long double			get_ldouble_flags(t_proper *properties, va_list *args);
 void				print_f_prefix(t_proper *properties, int *chain_sz,
 long double db);
 int					is_neg(float f);

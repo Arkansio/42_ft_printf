@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:36:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/23 02:19:27 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/24 02:26:52 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ int zero)
 		ft_write_multiple(properties->precision - sz, '0');
 }
 
-static int				get_zero_before(double val, int precision)
+static int				get_zero_before(long double val, int precision)
 {
 	int		i;
 	int		tmp;
 
 	i = precision;
 	val = (val < 0) ? -val : val;
-	val -= (double)(int)val;
+	val -= (long double)(int)val;
 	if (precision >= 19)
 		precision = 18;
 	while (i--)
@@ -74,12 +74,12 @@ static int				get_zero_before(double val, int precision)
 
 int						p_float(t_proper *properties, va_list *args)
 {
-	double	db;
-	int		chain_sz;
+	long double		db;
+	int				chain_sz;
 
 	if (properties->precision == -1)
 		properties->precision = 6;
-	db = va_arg(*args, double);
+	db = get_ldouble_flags(properties, args);
 	chain_sz = properties->precision + 1;
 	chain_sz += ft_ll_size((long long)db);
 	print_f_prefix(properties, &chain_sz, db);
