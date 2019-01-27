@@ -6,7 +6,7 @@
 /*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 19:21:25 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/27 23:14:10 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/27 23:22:10 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,8 @@ int				p_hex_l(t_proper *properties, va_list *args)
 		properties->precision = 1;
 	if (properties->precision == 0 && val == 0)
 		sz_result--;
-	printf("prec %d / res %d", properties->precision, sz_result);
 	if (contain_flag(properties, diez) && !(properties->precision == 0) && val != 0)
 		total_sz += 2;
-//	printf("contain flag: %d", contain_flag(properties, diez));
 	print_all(properties, str, val, sz_result);
 	total_sz += calcul_blank_w(properties, sz_result, val) + sz_result;
 	if (properties->precision > sz_result)
