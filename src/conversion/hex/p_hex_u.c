@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_hex_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mgessa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 03:20:24 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/19 05:21:13 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/28 03:00:23 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int		calcul_blank_w(t_proper *properties, int str_sz, long long val)
 	if (properties->min_w == -1)
 		return (0);
 	sz = str_sz;
+	if (contain_flag(properties, diez) && val != 0 && !(properties->precision == 0))
+		sz += 2;
 	if (val == 0 && properties->precision == 0)
 		sz--;
 	if (properties->precision > sz)
@@ -31,18 +33,14 @@ static int		calcul_blank_w(t_proper *properties, int str_sz, long long val)
 static void		print_all(t_proper *properties, char *str,
 long long val, int sz_result)
 {
-	if (contain_flag(properties, diez) &&
-	((properties->precision <= sz_result && val != 0) &&
-	!(properties->precision == 0 && val == 0))
-	&& contain_flag(properties, zero))
+	if (contain_flag(properties, diez) && val != 0 &&
+	!(properties->precision == 0) &&
+	contain_flag(properties, zero))
 		ft_putfaststr("0X", -1);
 	if (!contain_flag(properties, minus))
 		ft_write_multiple(calcul_blank_w(properties, sz_result, val),
 		contain_flag(properties, zero) ? '0' : ' ');
-	if (contain_flag(properties, diez) &&
-	((properties->precision <= sz_result && val != 0)
-	&& !(properties->precision == 0 && val == 0))
-	&& !contain_flag(properties, zero))
+	if (contain_flag(properties, diez) && val != 0 && !(properties->precision == 0) && !contain_flag(properties, zero))
 		ft_putfaststr("0X", -1);
 	if (properties->precision > sz_result)
 		ft_write_multiple(properties->precision - sz_result, '0');
@@ -69,10 +67,8 @@ int				p_hex_u(t_proper *properties, va_list *args)
 		properties->precision = 1;
 	if (properties->precision == 0 && val == 0)
 		sz_result--;
-	if (contain_flag(properties, diez) &&
-	((properties->precision <= sz_result && val != 0)
-	&& !(properties->precision == 0 && val == 0)))
-		sz_result += 2;
+	if (contain_flag(properties, diez) && !(properties->precision == 0) && val != 0)
+		total_sz += 2;
 	print_all(properties, str, val, sz_result);
 	total_sz += calcul_blank_w(properties, sz_result, val) + sz_result;
 	if (properties->precision > sz_result)
