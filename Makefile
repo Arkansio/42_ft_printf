@@ -6,7 +6,7 @@
 #    By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 23:24:40 by mgessa            #+#    #+#              #
-#    Updated: 2019/01/24 02:27:04 by mgessa           ###   ########.fr        #
+#    Updated: 2019/01/28 18:57:35 by mgessa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = libftprintf.a
 SRCS = ft_printf.c \
 		ft_parse_rd.c \
 		ft_validconv.c \
-		ft_strlst_read.c \
 		ft_lstaddend.c \
 		get_flag.c \
 		get_typefunc.c \
@@ -85,7 +84,6 @@ all: $(NAME)
 
 $(NAME): $(OBJSL) $(OBJS)
 	ar rc $(NAME) $^
-	gcc -o test.out maintest.c -L. ./libftprintf.a -I ./includes/
 
 ./%.o: ./src/%.c
 	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
@@ -95,7 +93,7 @@ $(NAME): $(OBJSL) $(OBJS)
 
 ./%.o: ./src/conversion/float/%.c
 	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
-
+ 
 ./%.o: ./src/conversion/int/%.c
 	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
 
@@ -130,8 +128,7 @@ $(NAME): $(OBJSL) $(OBJS)
 	gcc $(FLAGS) -c $^ -I $(HEADER) -I ./libft/includes
 
 clean:
-	/bin/rm -f $(OBJS)
-	/bin/rm -f $(OBJSL)
+	/bin/rm -f $(OBJS) $(OBJSL)
 
 fclean: clean
 	/bin/rm -f $(NAME)
