@@ -6,7 +6,7 @@
 /*   By: mgessa <mgessa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:19:48 by mgessa            #+#    #+#             */
-/*   Updated: 2019/01/28 17:54:01 by mgessa           ###   ########.fr       */
+/*   Updated: 2019/01/28 18:00:24 by mgessa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "stdio.h"
 
 enum				e_flags {
 	diez = 0,
@@ -92,7 +91,6 @@ int					ft_parse_flags(t_list **lst, const char *str, int max);
 int					ft_parse_properties(t_proper *proper, const char *str,
 int max);
 int					ft_convert(const char *str, int max, va_list *args);
-void				ft_strlst_read(t_list **alst);
 int					ft_validconv(const char *format);
 int					ft_parse_rd(const char *format, va_list *args);
 
